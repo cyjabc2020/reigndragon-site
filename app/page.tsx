@@ -113,15 +113,15 @@ export default function Home() {
           </span>
         </div>
 
-        <Link href="/thoughts/your-resume-is-dying" className="group block">
+        <Link href="/thoughts/the-root-series-ep4-the-point-of-no-return" className="group block">
           <article className="rounded-xl border border-border bg-surface/50 p-8 sm:p-10 hover:bg-surface-hover hover:border-accent/20 transition-all">
-            <span className="font-mono text-xs text-accent">Essay</span>
+            <span className="font-mono text-xs text-accent">The Root Series</span>
             <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-foreground group-hover:text-accent transition-colors">
-              Your R&eacute;sum&eacute; Is Dying
+              EP4: The Point of No Return
             </h2>
             <p className="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-              AI doesn&apos;t care where you went to school. The era of defining yourself by
-              a handful of keywords is ending. The era of individuals is here.
+              Why a single conversation can permanently collapse a relationship.
+              The hidden psychology behind proposals, rejection, and the cliff.
             </p>
             <div className="mt-6 flex items-center text-sm font-medium text-text-tertiary group-hover:text-accent transition-colors">
               Read more
