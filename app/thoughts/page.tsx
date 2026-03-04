@@ -8,6 +8,42 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "the-root-series-ep4-the-point-of-no-return",
+    title: "EP4: The Point of No Return",
+    excerpt:
+      "Why a single conversation can permanently collapse a relationship. The hidden psychology behind proposals, rejection, and the cliff.",
+    date: "2026-03-03",
+    category: "The Root Series",
+    readTime: "14 min read",
+  },
+  {
+    slug: "the-root-series-ep3-the-escape-artist",
+    title: "EP3: The Escape Artist",
+    excerpt:
+      "Why some people can\u2019t stop running \u2014 and what they\u2019re really running from. The psychology behind using relationships, work, and noise as refuge from unfelt pain.",
+    date: "2026-03-02",
+    category: "The Root Series",
+    readTime: "18 min read",
+  },
+  {
+    slug: "the-root-series-ep2-the-identity-anchor",
+    title: "EP2: The Identity Anchor",
+    excerpt:
+      "Why some people don\u2019t know who they are unless they\u2019re attached to someone or something. The hidden psychology behind identity construction through relationships.",
+    date: "2026-03-02",
+    category: "The Root Series",
+    readTime: "10 min read",
+  },
+  {
+    slug: "the-root-series-ep1-the-wound-seeker",
+    title: "EP1: The Wound Seeker",
+    excerpt:
+      "We don\u2019t choose what\u2019s good for us. We choose what our nervous system recognizes. The hidden psychology behind why we\u2019re drawn to people who recreate our deepest pain.",
+    date: "2026-03-02",
+    category: "The Root Series",
+    readTime: "12 min read",
+  },
+  {
     slug: "your-resume-is-dying",
     title: "Your R\u00e9sum\u00e9 Is Dying",
     excerpt:
