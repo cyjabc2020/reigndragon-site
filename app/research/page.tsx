@@ -3,44 +3,81 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Interdisciplinary research across AI, economics, psychology, policy, and applied math for AI governance and policy-as-product.",
+    "Multi-agent behavioral experiments and formal theory for AI governance and policy-as-product.",
 };
 
 const projects = [
   {
     status: "Active",
+    title: "Trust Dynamics in Multi-Agent LLM Systems",
+    description:
+      "How do agents build, lose, and recover trust across repeated interactions? We study the conditions under which a single early failure leaves a lasting mark &mdash; and the structural choices (reasoning effort, memory, verification protocols) that shape whether groups of agents can coordinate at all when the stakes are real.",
+    tags: ["Multi-Agent", "Trust", "Coordination", "Memory"],
+  },
+  {
+    status: "Active",
+    title: "Consequence Design for Cooperation",
+    description:
+      "Cooperation in agent systems is not a property of the model &mdash; it is a property of the rules around the model. We map how different consequence regimes (proportional, progressive, all-or-nothing, regressive) shape cooperation, exploitation, and catastrophic failure, and identify the configurations where each regime quietly breaks.",
+    tags: ["Mechanism Design", "Cooperation", "Game Theory"],
+  },
+  {
+    status: "Active",
+    title: "Risk and Decision Theory in Optimal Control",
+    description:
+      "When environments contain absorbing failure states, optimal policies start to look strikingly human &mdash; risk-averse near the cliff in growth regimes, risk-seeking near the cliff in decline. We derive the structural conditions that produce these patterns and connect them to long-standing puzzles in behavioral economics.",
+    tags: ["Decision Theory", "MDP", "Prospect Theory", "Applied Math"],
+  },
+  {
+    status: "Active",
+    title: "Long-Horizon Behavior and Accountability",
+    description:
+      "Many real deployments give agents fixed terms, finite horizons, or short-window incentives. We study what happens when these conditions meet a shared resource: when does an agent extract too much, rationalize doing it, and become invisible to the people it harms? And which deployment-time choices reverse the pattern cheaply?",
+    tags: ["Long Horizon", "Commons", "Incentives", "Accountability"],
+  },
+  {
+    status: "Active",
     title: "Policy-as-Product Frameworks",
     description:
-      "Developing evaluation and optimization frameworks that treat AI governance as a product &mdash; measurable, iterable, and context-specific. Bridging the gap between policy intention and real-world outcomes.",
-    tags: ["Policy", "Evaluation", "Optimization"],
+      "Translating experimental findings into design rules for the people deploying agent systems. Consequence regimes, accountability horizons, visibility prompts, memory structure, measurement choices &mdash; the everyday levers, the failure modes they prevent, and the evidence behind each rule.",
+    tags: ["Policy", "Evaluation", "Deployment"],
   },
   {
-    status: "Active",
+    status: "Upcoming",
     title: "Context-Specific Governance Evaluation",
     description:
-      "Every domain has unique failure modes. We build tailored assessment methodologies for AI governance in healthcare, finance, education, and national security &mdash; moving beyond one-size-fits-all checklists.",
+      "Every domain &mdash; healthcare, finance, education, defense &mdash; has its own failure modes and trade-offs. We are building tailored evaluation frameworks that move beyond one-size-fits-all checklists toward governance shaped by the structure of each setting.",
     tags: ["Healthcare", "Finance", "Education", "Defense"],
-  },
-  {
-    status: "Active",
-    title: "Behavioral Economics of AI Adoption",
-    description:
-      "Studying the psychological and economic incentive structures that shape how organizations and governments adopt, regulate, and respond to AI. Where do governance failures originate?",
-    tags: ["Economics", "Psychology", "Incentives"],
   },
   {
     status: "Upcoming",
     title: "AI as a Mirror: Societal Reflection Studies",
     description:
-      "Using the process of governing AI systems as a diagnostic tool for human society itself &mdash; surfacing biases, institutional blind spots, and structural incentive misalignments that were always present but now made legible at scale.",
+      "The patterns we find in artificial agents &mdash; negativity bias, short-horizon extraction, bystander invisibility &mdash; are not the model&apos;s invention. They are inherited from us. We use multi-agent experiments as a diagnostic tool for the institutions, incentives, and blind spots of the societies that built the training data.",
     tags: ["Society", "Bias", "Institutions"],
   },
+];
+
+const themes = [
   {
-    status: "Upcoming",
-    title: "Governance Optimization via Applied Mathematics",
-    description:
-      "Applying formal mathematical methods &mdash; game theory, mechanism design, optimization theory &mdash; to model and improve AI governance structures. Moving policy from intuition to rigor.",
-    tags: ["Applied Math", "Game Theory", "Mechanism Design"],
+    title: "Behavior under stakes",
+    detail:
+      "What agents do when the cost of being wrong is real &mdash; not what they say they would do in the abstract.",
+  },
+  {
+    title: "Structure over capability",
+    detail:
+      "The same model can cooperate or self-destruct depending on the rules around it. We map which rules matter.",
+  },
+  {
+    title: "Cheap interventions",
+    detail:
+      "We look hardest for the prompt-, horizon-, and visibility-level fixes that change outcomes without changing the model.",
+  },
+  {
+    title: "Theory that predicts",
+    detail:
+      "Where simulation reveals a pattern, we look for the formal structure that explains it &mdash; and would have predicted it.",
   },
 ];
 
@@ -56,19 +93,54 @@ export default function ResearchPage() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
-          Research <span className="gradient-text">Projects</span>
+          Research <span className="gradient-text">programs</span>
         </h1>
 
         <p className="max-w-2xl text-lg text-text-secondary leading-relaxed">
-          Interdisciplinary research combining AI, economics, psychology,
-          policy, and applied mathematics to evaluate and optimize AI governance
-          for specific contexts.
+          We study how AI agents behave in groups, under risk, and across time
+          &mdash; through controlled multi-agent simulation, formal theory, and
+          translation into deployment-ready design rules.
         </p>
       </section>
 
       <div className="glow-line mx-6" />
 
+      {/* Themes */}
       <section className="mx-auto max-w-4xl px-6 py-16">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            How we work
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {themes.map((theme) => (
+            <div
+              key={theme.title}
+              className="rounded-xl border border-border bg-surface/50 p-6"
+            >
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {theme.title}
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {theme.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      <section className="mx-auto max-w-4xl px-6 py-16">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            Programs
+          </span>
+        </div>
+
         <div className="space-y-6">
           {projects.map((project) => (
             <article
@@ -115,6 +187,19 @@ export default function ResearchPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* Publications placeholder */}
+      <section className="mx-auto max-w-4xl px-6 pb-16">
+        <div className="rounded-xl border border-border bg-surface/30 p-8">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary mb-3">
+            Publications
+          </p>
+          <p className="text-text-secondary leading-relaxed">
+            New work from the lab is in preparation. Papers and preprints will
+            be listed here as they are released.
+          </p>
         </div>
       </section>
 

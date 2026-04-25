@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About ReignDragon — an interdisciplinary research lab focused on AI governance and policy-as-product.",
+    "About ReignDragon — a research lab studying how AI agents behave under pressure and turning that evidence into governance that works.",
 };
 
 export default function AboutPage() {
@@ -23,28 +23,30 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            ReignDragon is an interdisciplinary research lab focused on AI
-            governance and policy-as-product.
+            ReignDragon is a research lab studying how AI agents behave under
+            pressure &mdash; in groups, under risk, across time &mdash; and
+            translating that evidence into governance that works.
           </p>
 
           <p>
             We were founded on a conviction: AI is the most powerful force
             humanity has ever created, and the question of how to govern it is
-            the most important question of our time. No single discipline can
-            answer it alone.
+            the most important question of our time. It is also a question that
+            no single discipline can answer alone.
           </p>
 
           <p>
-            We bring together researchers across artificial intelligence,
-            economics, psychology, public policy, applied mathematics, and
-            machine learning &mdash; not as separate tracks, but as a unified
-            effort to understand governance-level and policy-level challenges in
-            their full complexity.
+            So we built a lab that doesn&apos;t pretend otherwise. We design
+            controlled multi-agent experiments, derive the formal structure
+            behind what we observe, and turn the findings into design rules
+            people can actually use. AI, machine learning, economics,
+            psychology, public policy, and applied mathematics &mdash; not as
+            parallel tracks, but as one effort.
           </p>
 
           <p>
-            We publish our thinking openly because governance must be a
-            conversation, not a decree.
+            We publish openly because governance must be a conversation, not a
+            decree.
           </p>
         </div>
       </section>
@@ -59,29 +61,39 @@ export default function AboutPage() {
         <div className="space-y-8">
           {[
             {
-              principle: "Governance as rigorous as the technology",
+              principle: "Evidence before opinion",
               detail:
-                "AI policy cannot be vague aspiration. We treat governance as a product \u2014 evaluated, iterated, and optimized with the same rigor applied to the systems it governs.",
+                "AI policy cannot be vague aspiration. Every claim we make is grounded in controlled simulation, formal analysis, or both. Every design rule comes with the failure mode it prevents.",
+            },
+            {
+              principle: "Structure beats sentiment",
+              detail:
+                "The same model can cooperate or self-destruct depending on the rules around it. Capability is rarely the bottleneck; consequence design, accountability horizon, and visibility almost always are.",
+            },
+            {
+              principle: "Behavior emerges between agents and over time",
+              detail:
+                "Trust, restraint, cooperation, foresight, fairness — the things that decide whether deployment goes well — do not appear in single-prompt benchmarks. They appear in groups, under stakes, across rounds. So that is where we look.",
+            },
+            {
+              principle: "Cheap interventions matter most",
+              detail:
+                "We look hardest for the prompt-, horizon-, and visibility-level fixes that change outcomes without changing the model. The worst outcomes are often cheaply preventable — if someone has done the work to find them.",
             },
             {
               principle: "Interdisciplinary by necessity",
               detail:
-                "The problems at this frontier don\u2019t respect disciplinary boundaries. Economics, psychology, policy, math, and ML must work together \u2014 not in parallel, but as one.",
-            },
-            {
-              principle: "Context over universals",
-              detail:
-                "There is no single policy for all AI. Every domain has its own failure modes and trade-offs. We build evaluation frameworks tailored to specific contexts.",
+                "The questions at this frontier — trust, accountability, collective action, decision-making near catastrophe — have never lived inside any single field. Economics, psychology, policy, math, and ML must work together as one.",
             },
             {
               principle: "A mirror for humanity",
               detail:
-                "Governing AI forces us to examine our own biases, incentive structures, and blind spots. The work of reigning AI is also the work of better understanding human society itself.",
+                "The biases and blind spots we find in artificial agents are rarely the model’s invention. They are inherited from us. Governing AI well forces us to examine the institutions and incentives we already live inside.",
             },
             {
-              principle: "Advance, don\u2019t retreat",
+              principle: "Advance, don’t retreat",
               detail:
-                "We are not here to slow down. We are here to ensure the most powerful technology ever created points in the right direction.",
+                "We are not here to slow progress. We are here to ensure the most powerful technology ever created points in the right direction.",
             },
           ].map((belief) => (
             <div
