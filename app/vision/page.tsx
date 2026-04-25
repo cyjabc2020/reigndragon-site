@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Vision",
   description:
-    "AI is the most powerful force humanity has ever created. Our mission is to reign this dragon — through governance, policy-as-product, and interdisciplinary research.",
+    "AI is the most powerful force humanity has ever created. ReignDragon studies how AI agents behave under pressure and turns that evidence into governance that works.",
 };
 
 export default function VisionPage() {
@@ -24,16 +24,18 @@ export default function VisionPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            AI is the new intelligence. The new workforce. It processes faster,
-            knows more, and scales infinitely. No human will outcompete it on
-            traditional measures of knowledge and productivity &mdash; that race
-            is already over.
+            AI is the new intelligence. The new workforce. It already processes
+            faster, knows more, and scales further than any human ever will.
+            That race is over.
           </p>
 
           <p>
-            This is the most powerful force humanity has ever created. And that
-            is precisely what makes the next question the most important one of
-            our time:
+            But intelligence is not the only thing that matters when AI is
+            deployed in the real world. What matters is how agents behave when
+            they are placed in groups, given resources, made accountable to a
+            term in office, and asked to act under risk. These are not
+            engineering problems. They are the problems human institutions have
+            spent centuries learning to handle.
           </p>
 
           <p className="text-foreground text-xl font-semibold">
@@ -41,10 +43,9 @@ export default function VisionPage() {
           </p>
 
           <p>
-            How do we ensure this immense power helps us advance our
-            civilization &mdash; rather than destroy ourselves? The answer
-            won&apos;t come from any single discipline. It demands a new kind of
-            thinking.
+            We answer that question the way the question deserves: with
+            experiments, with theory, and with governance that is itself a
+            product &mdash; designed, measured, and improved.
           </p>
         </div>
       </section>
@@ -61,23 +62,30 @@ export default function VisionPage() {
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-          AI governance &amp; policy-as-product
+          Evidence-based AI governance
         </h2>
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            ReignDragon is a research lab at the intersection of AI governance
-            and applied policy. We don&apos;t just study what&apos;s happening &mdash;
-            we build the frameworks, evaluations, and tools that make governance
-            actionable.
+            ReignDragon studies how AI agents actually behave &mdash; in
+            multi-agent settings, under high stakes, across time &mdash; and
+            translates that evidence into design rules for the people deploying
+            them.
           </p>
 
           <p>
-            We combine research from across disciplines &mdash; artificial
-            intelligence, economics, psychology, public policy, applied
-            mathematics, and machine learning &mdash; to understand governance-level
-            and policy-level pitfalls in each specific context. Then we optimize
-            for outcomes that actually serve people.
+            We don&apos;t treat governance as a wishlist. We treat it as a
+            product. Every claim is grounded in controlled simulation, formal
+            analysis, or both. Every design rule comes with the failure mode it
+            prevents.
+          </p>
+
+          <p>
+            We work across artificial intelligence, economics, psychology,
+            public policy, applied mathematics, and machine learning &mdash;
+            because the questions that matter at this frontier (trust,
+            cooperation, accountability, restraint) have never lived inside any
+            single field.
           </p>
 
           <p>
@@ -90,29 +98,36 @@ export default function VisionPage() {
 
       <div className="glow-line mx-6" />
 
-      {/* Pillars */}
+      {/* What we provide */}
       <section className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-        <div className="space-y-14">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            What we provide
+          </span>
+        </div>
+
+        <div className="space-y-10">
           {[
             {
               number: "01",
-              title: "Interdisciplinary by Design",
-              text: "AI governance cannot live in a single silo. We weave together AI research, economics, psychology, policy analysis, and applied math &mdash; because the problems at this frontier don&rsquo;t respect disciplinary boundaries.",
+              title: "Multi-Agent Behavioral Studies",
+              text: "Controlled simulations that put LLMs into the situations where governance actually breaks: collective action under risk, repeated trust after betrayal, commons under temptation, decisions near catastrophe. We run these at scale and report what changes the outcome.",
             },
             {
               number: "02",
-              title: "Context-Specific Evaluation",
-              text: "There is no universal policy that governs all AI. Every domain &mdash; healthcare, finance, education, defense &mdash; has its own failure modes and trade-offs. We build evaluation frameworks tailored to specific contexts, not one-size-fits-all checklists.",
+              title: "Formal Foundations",
+              text: "Mathematical theory connecting agent behavior to environment structure. When does optimal control reproduce human-like risk attitudes? When does an incentive scheme guarantee cooperation? Theory that predicts what we see in the simulations &mdash; and what we will see in deployment.",
             },
             {
               number: "03",
-              title: "A Mirror for Human Society",
-              text: "The work of reigning AI doesn&rsquo;t only serve technology. By rigorously examining how we govern intelligence systems, we hold up a reflection mirror to our own societies &mdash; exposing the biases, incentive structures, and blind spots that were always there, now made legible at scale.",
+              title: "Design Rules for Deployment",
+              text: "Concrete, testable guidance on the everyday levers that decide whether an agent system serves people: consequence regimes, accountability horizons, who is made visible, what gets measured, how memory is structured. Cheap to change, expensive to ignore.",
             },
             {
               number: "04",
-              title: "Advance, Don&rsquo;t Retreat",
-              text: "We are not here to slow down progress. We are here to ensure it points in the right direction. The opportunity to shape civilization has never been greater &mdash; and that opportunity demands governance that is as ambitious and capable as the technology itself.",
+              title: "A Mirror for Human Society",
+              text: "By rigorously examining how artificial agents behave under structures we already know, we hold a mirror up to our own institutions. The biases, blind spots, and incentive misalignments we find in the model are rarely the model's invention &mdash; they are ours, made legible at scale.",
             },
           ].map((item) => (
             <div key={item.number} className="flex gap-6">
@@ -123,13 +138,46 @@ export default function VisionPage() {
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {item.title}
                 </h3>
-                <p
-                  className="text-text-secondary leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: item.text }}
-                />
+                <p className="text-text-secondary leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* Why it matters */}
+      <section className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            Why it matters
+          </span>
+        </div>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed">
+          <p>
+            AI agents are no longer answering single questions. They are sitting
+            on budgets, coordinating in groups, taking long-horizon actions, and
+            affecting people who never see them. The behaviors that decide
+            whether this goes well &mdash; trust, restraint, cooperation,
+            foresight, fairness &mdash; emerge between agents and over time.
+            They will not show up in a single-prompt benchmark.
+          </p>
+          <p>
+            The encouraging part is that our experiments keep finding the same
+            thing: capability is rarely the bottleneck. The same model
+            cooperates beautifully under one structure and self-destructs under
+            another. That means governance is not guesswork. It means there are
+            levers. It means the worst outcomes are often cheaply preventable
+            &mdash; if someone has done the work to find them.
+          </p>
+          <p className="text-foreground font-medium">
+            That is the work we are here to do.
+          </p>
         </div>
       </section>
 
@@ -152,10 +200,13 @@ export default function VisionPage() {
           {[
             "Artificial Intelligence",
             "Machine Learning",
-            "Economics",
-            "Psychology",
+            "Game Theory",
+            "Behavioral Economics",
+            "Cognitive Psychology",
             "Public Policy",
             "Applied Mathematics",
+            "Mechanism Design",
+            "Decision Theory",
           ].map((discipline) => (
             <div
               key={discipline}

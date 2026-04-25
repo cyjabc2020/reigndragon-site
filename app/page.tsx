@@ -23,10 +23,10 @@ export default function Home() {
           </h1>
 
           <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-10">
-            AI is the most powerful force humanity has ever created. Our lab
-            researches AI governance and policy-as-product &mdash; combining AI,
-            economics, psychology, policy, and applied math to ensure this
-            dragon advances our civilization.
+            AI is the most powerful force humanity has ever created. ReignDragon
+            is a research lab studying how AI agents behave under pressure
+            &mdash; in groups, under risk, across time &mdash; and turning that
+            evidence into governance that works.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -40,10 +40,10 @@ export default function Home() {
               </svg>
             </Link>
             <Link
-              href="/thoughts"
+              href="/research"
               className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
             >
-              Read Our Thoughts
+              See Our Research
             </Link>
           </div>
         </div>
@@ -51,54 +51,126 @@ export default function Home() {
 
       <div className="glow-line mx-6" />
 
-      {/* Three Pillars */}
+      {/* What we do */}
       <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            What we do
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
               label: "01",
-              title: "Vision",
+              title: "Behavioral Experiments",
               description:
-                "AI governance and policy-as-product. Ensuring the most powerful force ever created helps advance civilization, not destroy it.",
-              href: "/vision",
+                "We run controlled multi-agent simulations where LLMs face high-stakes decisions &mdash; cooperation under risk, trust under uncertainty, commons under temptation &mdash; to surface the failure modes that don't appear in single-turn benchmarks.",
             },
             {
               label: "02",
-              title: "Research",
+              title: "Formal Theory",
               description:
-                "Interdisciplinary research across AI, economics, psychology, policy, and applied math to evaluate and optimize governance frameworks.",
-              href: "/research",
+                "We connect agent behavior to mathematical structure: when do optimal policies look risk-averse, when do bounded horizons induce extraction, when does an environment guarantee cooperation? Theory that predicts deployment.",
             },
             {
               label: "03",
-              title: "Thoughts",
+              title: "Policy-as-Product",
               description:
-                "Essays on AI, governance, identity, and the transformation unfolding around us. A mirror held up to human society itself.",
-              href: "/thoughts",
+                "Findings become design rules. Consequence regimes, accountability horizons, visibility prompts, memory structures &mdash; the everyday levers that decide whether a deployed system serves people or quietly harms them.",
             },
           ].map((pillar) => (
-            <Link
+            <div
               key={pillar.label}
-              href={pillar.href}
-              className="group relative rounded-xl border border-border bg-surface/50 p-8 hover:bg-surface-hover hover:border-accent/20 transition-all"
+              className="group relative rounded-xl border border-border bg-surface/50 p-8"
             >
               <span className="font-mono text-xs text-accent mb-4 block">
                 {pillar.label}
               </span>
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-3">
                 {pillar.title}
               </h3>
               <p className="text-sm leading-relaxed text-text-secondary">
                 {pillar.description}
               </p>
-              <div className="mt-6 flex items-center text-xs font-medium text-text-tertiary group-hover:text-accent transition-colors">
-                Explore
-                <svg className="ml-1 h-3 w-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </Link>
+            </div>
           ))}
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* Why it matters */}
+      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            Why it matters
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-xl border border-border bg-surface/50 p-8">
+            <h3 className="text-xl font-semibold text-foreground mb-4">
+              Agents are leaving the sandbox
+            </h3>
+            <p className="text-text-secondary leading-relaxed">
+              LLMs are no longer answering single questions. They are coordinating
+              in groups, holding budgets, taking actions across long horizons,
+              and affecting people who never see them. The behaviors that matter
+              now &mdash; trust, restraint, cooperation, foresight &mdash; emerge
+              between agents and over time, not in any one prompt.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface/50 p-8">
+            <h3 className="text-xl font-semibold text-foreground mb-4">
+              Structure beats sentiment
+            </h3>
+            <p className="text-text-secondary leading-relaxed">
+              Our experiments keep finding the same thing: capability is not the
+              bottleneck. The same model cooperates or self-destructs depending
+              on consequence design, accountability horizon, and who is made
+              visible. These are governance choices, and they are cheap to fix
+              &mdash; if we know to fix them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* Story */}
+      <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            Our story
+          </span>
+        </div>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed">
+          <p>
+            ReignDragon began with a simple observation: every serious account
+            of AI risk eventually becomes an account of incentives, institutions,
+            and human nature &mdash; topics economics and psychology have studied
+            for a century, but that the AI field keeps re-deriving from scratch.
+          </p>
+          <p>
+            We built a lab to close that gap. We design experiments that put
+            language models into the situations our institutions were built to
+            handle &mdash; collective action, repeated trust, decisions near
+            catastrophe, fixed terms of office &mdash; and we measure what
+            actually happens, episode by episode, at scale.
+          </p>
+          <p>
+            What we find is consistent and useful: AI agents inherit recognizable
+            patterns from the data they were trained on, and they break in
+            recognizable ways when the structure around them is wrong. That is
+            both a warning and a gift. It means governance is not guesswork. It
+            means there are levers, and they can be pulled.
+          </p>
         </div>
       </section>
 
