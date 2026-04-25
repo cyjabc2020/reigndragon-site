@@ -11,21 +11,21 @@ const projects = [
     status: "Active",
     title: "Trust Dynamics in Multi-Agent LLM Systems",
     description:
-      "How do agents build, lose, and recover trust across repeated interactions? We study the conditions under which a single early failure leaves a lasting mark &mdash; and the structural choices (reasoning effort, memory, verification protocols) that shape whether groups of agents can coordinate at all when the stakes are real.",
+      "How do agents build, lose, and recover trust across repeated interactions? We study the conditions under which a single early failure leaves a lasting mark — and the structural choices (reasoning effort, memory, verification protocols) that shape whether groups of agents can coordinate at all when the stakes are real.",
     tags: ["Multi-Agent", "Trust", "Coordination", "Memory"],
   },
   {
     status: "Active",
     title: "Consequence Design for Cooperation",
     description:
-      "Cooperation in agent systems is not a property of the model &mdash; it is a property of the rules around the model. We map how different consequence regimes (proportional, progressive, all-or-nothing, regressive) shape cooperation, exploitation, and catastrophic failure, and identify the configurations where each regime quietly breaks.",
+      "Cooperation in agent systems is not a property of the model — it is a property of the rules around the model. We map how different consequence regimes (proportional, progressive, all-or-nothing, regressive) shape cooperation, exploitation, and catastrophic failure, and identify the configurations where each regime quietly breaks.",
     tags: ["Mechanism Design", "Cooperation", "Game Theory"],
   },
   {
     status: "Active",
     title: "Risk and Decision Theory in Optimal Control",
     description:
-      "When environments contain absorbing failure states, optimal policies start to look strikingly human &mdash; risk-averse near the cliff in growth regimes, risk-seeking near the cliff in decline. We derive the structural conditions that produce these patterns and connect them to long-standing puzzles in behavioral economics.",
+      "When environments contain absorbing failure states, optimal policies start to look strikingly human — risk-averse near the cliff in growth regimes, risk-seeking near the cliff in decline. We derive the structural conditions that produce these patterns and connect them to long-standing puzzles in behavioral economics.",
     tags: ["Decision Theory", "MDP", "Prospect Theory", "Applied Math"],
   },
   {
@@ -39,21 +39,21 @@ const projects = [
     status: "Active",
     title: "Policy-as-Product Frameworks",
     description:
-      "Translating experimental findings into design rules for the people deploying agent systems. Consequence regimes, accountability horizons, visibility prompts, memory structure, measurement choices &mdash; the everyday levers, the failure modes they prevent, and the evidence behind each rule.",
+      "Translating experimental findings into design rules for the people deploying agent systems. Consequence regimes, accountability horizons, visibility prompts, memory structure, measurement choices — the everyday levers, the failure modes they prevent, and the evidence behind each rule.",
     tags: ["Policy", "Evaluation", "Deployment"],
   },
   {
     status: "Upcoming",
     title: "Context-Specific Governance Evaluation",
     description:
-      "Every domain &mdash; healthcare, finance, education, defense &mdash; has its own failure modes and trade-offs. We are building tailored evaluation frameworks that move beyond one-size-fits-all checklists toward governance shaped by the structure of each setting.",
+      "Every domain — healthcare, finance, education, defense — has its own failure modes and trade-offs. We are building tailored evaluation frameworks that move beyond one-size-fits-all checklists toward governance shaped by the structure of each setting.",
     tags: ["Healthcare", "Finance", "Education", "Defense"],
   },
   {
     status: "Upcoming",
     title: "AI as a Mirror: Societal Reflection Studies",
     description:
-      "The patterns we find in artificial agents &mdash; negativity bias, short-horizon extraction, bystander invisibility &mdash; are not the model&apos;s invention. They are inherited from us. We use multi-agent experiments as a diagnostic tool for the institutions, incentives, and blind spots of the societies that built the training data.",
+      "The patterns we find in artificial agents — negativity bias, short-horizon extraction, bystander invisibility — are not the model's invention. They are inherited from us. We use multi-agent experiments as a diagnostic tool for the institutions, incentives, and blind spots of the societies that built the training data.",
     tags: ["Society", "Bias", "Institutions"],
   },
 ];
@@ -62,7 +62,7 @@ const themes = [
   {
     title: "Behavior under stakes",
     detail:
-      "What agents do when the cost of being wrong is real &mdash; not what they say they would do in the abstract.",
+      "What agents do when the cost of being wrong is real — not what they say they would do in the abstract.",
   },
   {
     title: "Structure over capability",
@@ -77,7 +77,7 @@ const themes = [
   {
     title: "Theory that predicts",
     detail:
-      "Where simulation reveals a pattern, we look for the formal structure that explains it &mdash; and would have predicted it.",
+      "Where simulation reveals a pattern, we look for the formal structure that explains it — and would have predicted it.",
   },
 ];
 
