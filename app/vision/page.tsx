@@ -117,7 +117,7 @@ export default function VisionPage() {
             {
               number: "02",
               title: "Formal Foundations",
-              text: "Mathematical theory connecting agent behavior to environment structure. When does optimal control reproduce human-like risk attitudes? When does an incentive scheme guarantee cooperation? Theory that predicts what we see in the simulations &mdash; and what we will see in deployment.",
+              text: "Mathematical theory connecting agent behavior to environment structure. When does optimal control reproduce human-like risk attitudes? When does an incentive scheme guarantee cooperation? Theory that predicts what we see in the simulations — and what we will see in deployment.",
             },
             {
               number: "03",
@@ -127,7 +127,7 @@ export default function VisionPage() {
             {
               number: "04",
               title: "A Mirror for Human Society",
-              text: "By rigorously examining how artificial agents behave under structures we already know, we hold a mirror up to our own institutions. The biases, blind spots, and incentive misalignments we find in the model are rarely the model's invention &mdash; they are ours, made legible at scale.",
+              text: "By rigorously examining how artificial agents behave under structures we already know, we hold a mirror up to our own institutions. The biases, blind spots, and incentive misalignments we find in the model are rarely the model's invention — they are ours, made legible at scale.",
             },
           ].map((item) => (
             <div key={item.number} className="flex gap-6">

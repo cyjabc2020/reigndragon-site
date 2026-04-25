@@ -66,7 +66,7 @@ export default function Home() {
               label: "01",
               title: "Behavioral Experiments",
               description:
-                "We run controlled multi-agent simulations where LLMs face high-stakes decisions &mdash; cooperation under risk, trust under uncertainty, commons under temptation &mdash; to surface the failure modes that don't appear in single-turn benchmarks.",
+                "We run controlled multi-agent simulations where LLMs face high-stakes decisions — cooperation under risk, trust under uncertainty, commons under temptation — to surface the failure modes that don't appear in single-turn benchmarks.",
             },
             {
               label: "02",
@@ -78,7 +78,7 @@ export default function Home() {
               label: "03",
               title: "Policy-as-Product",
               description:
-                "Findings become design rules. Consequence regimes, accountability horizons, visibility prompts, memory structures &mdash; the everyday levers that decide whether a deployed system serves people or quietly harms them.",
+                "Findings become design rules. Consequence regimes, accountability horizons, visibility prompts, memory structures — the everyday levers that decide whether a deployed system serves people or quietly harms them.",
             },
           ].map((pillar) => (
             <div
