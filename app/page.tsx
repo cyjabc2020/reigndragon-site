@@ -1,16 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSparkles from "./components/HeroSparkles";
 
 export default function Home() {
   return (
     <div className="bg-grid">
-      {/* Hero Section */}
-      <section className="relative mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-8 glow-dot pulse-glow" />
-        <div className="absolute top-40 right-12 glow-dot pulse-glow" style={{ animationDelay: "1s" }} />
+      {/* Hero Section — full-bleed background image with drifting sparkles */}
+      <section className="relative isolate overflow-hidden min-h-[85vh] flex items-center">
+        {/* Background image */}
+        <Image
+          src="/images/hero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover -z-20"
+        />
+        {/* Readability scrim: subtle left fade backs the copy without hiding
+            the artwork; light top/bottom darkening for nav + section transition. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(8,10,16,0.7) 0%, rgba(8,10,16,0.35) 35%, rgba(8,10,16,0) 60%, rgba(8,10,16,0) 100%), linear-gradient(to bottom, rgba(8,10,16,0.45) 0%, rgba(8,10,16,0) 20%, rgba(8,10,16,0) 75%, rgba(8,10,16,0.7) 100%)",
+          }}
+        />
+        {/* Sparkles canvas */}
+        <HeroSparkles />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] gap-10 lg:gap-12 items-center">
+        <div className="relative mx-auto max-w-6xl w-full px-6 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="mb-6 flex items-center gap-3">
               <div className="h-px w-8 bg-accent/40" />
@@ -34,7 +53,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/vision"
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors backdrop-blur-sm"
               >
                 Our Vision
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,22 +62,11 @@ export default function Home() {
               </Link>
               <Link
                 href="/research"
-                className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
+                className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors backdrop-blur-sm"
               >
                 See Our Research
               </Link>
             </div>
-          </div>
-
-          <div className="relative aspect-square w-full max-w-[520px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-border bg-surface/30">
-            <Image
-              src="/images/hero.png"
-              alt="ReignDragon"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 520px"
-              className="object-cover"
-            />
           </div>
         </div>
       </section>
