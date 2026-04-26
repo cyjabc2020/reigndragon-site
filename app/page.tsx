@@ -16,11 +16,23 @@ export default function Home() {
           sizes="100vw"
           className="object-cover -z-20"
         />
-        {/* Readability scrim: subtle left fade backs the copy without hiding
-            the artwork; light top/bottom darkening for nav + section transition. */}
+        {/* Readability scrim — mobile: heavier full-width darkening because
+            the copy spans the entire viewport over the brightest part of the
+            artwork. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 -z-10 md:hidden"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(8,10,16,0.85) 0%, rgba(8,10,16,0.7) 60%, rgba(8,10,16,0.55) 100%), linear-gradient(to bottom, rgba(8,10,16,0.55) 0%, rgba(8,10,16,0.25) 25%, rgba(8,10,16,0.25) 70%, rgba(8,10,16,0.8) 100%)",
+          }}
+        />
+        {/* Readability scrim — desktop: subtle left fade backs the copy
+            without hiding the artwork; light top/bottom darkening for nav
+            and section transition. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 hidden md:block"
           style={{
             background:
               "linear-gradient(to right, rgba(8,10,16,0.7) 0%, rgba(8,10,16,0.35) 35%, rgba(8,10,16,0) 60%, rgba(8,10,16,0) 100%), linear-gradient(to bottom, rgba(8,10,16,0.45) 0%, rgba(8,10,16,0) 20%, rgba(8,10,16,0) 75%, rgba(8,10,16,0.7) 100%)",
