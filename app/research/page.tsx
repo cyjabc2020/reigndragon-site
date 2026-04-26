@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -84,23 +85,38 @@ const themes = [
 export default function ResearchPage() {
   return (
     <div className="bg-grid">
-      <section className="mx-auto max-w-4xl px-6 pt-24 pb-12 sm:pt-32">
-        <div className="mb-8 flex items-center gap-3">
-          <div className="h-px w-8 bg-accent/40" />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-            Research
-          </span>
+      <section className="mx-auto max-w-6xl px-6 pt-24 pb-12 sm:pt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] gap-10 lg:gap-12 items-center">
+          <div>
+            <div className="mb-8 flex items-center gap-3">
+              <div className="h-px w-8 bg-accent/40" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                Research
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
+              Research <span className="gradient-text">programs</span>
+            </h1>
+
+            <p className="max-w-2xl text-lg text-text-secondary leading-relaxed">
+              We study how AI agents behave in groups, under risk, and across time
+              &mdash; through controlled multi-agent simulation, formal theory, and
+              translation into deployment-ready design rules.
+            </p>
+          </div>
+
+          <div className="relative aspect-square w-full max-w-[440px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-border bg-surface/30">
+            <Image
+              src="/images/research-hero.png"
+              alt="Research"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 440px"
+              className="object-cover"
+            />
+          </div>
         </div>
-
-        <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
-          Research <span className="gradient-text">programs</span>
-        </h1>
-
-        <p className="max-w-2xl text-lg text-text-secondary leading-relaxed">
-          We study how AI agents behave in groups, under risk, and across time
-          &mdash; through controlled multi-agent simulation, formal theory, and
-          translation into deployment-ready design rules.
-        </p>
       </section>
 
       <div className="glow-line mx-6" />
