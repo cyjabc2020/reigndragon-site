@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -9,42 +10,55 @@ export default function Home() {
         <div className="absolute top-20 left-8 glow-dot pulse-glow" />
         <div className="absolute top-40 right-12 glow-dot pulse-glow" style={{ animationDelay: "1s" }} />
 
-        <div className="max-w-3xl">
-          <div className="mb-6 flex items-center gap-3">
-            <div className="h-px w-8 bg-accent/40" />
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              ReignDragon
-            </span>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] gap-10 lg:gap-12 items-center">
+          <div className="max-w-3xl">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="h-px w-8 bg-accent/40" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                ReignDragon
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
+              Reign the{" "}
+              <span className="gradient-text">dragon</span>
+            </h1>
+
+            <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-10">
+              AI is the most powerful force humanity has ever created. ReignDragon
+              is a research lab studying how AI agents behave under pressure
+              &mdash; in groups, under risk, across time &mdash; and turning that
+              evidence into governance that works.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/vision"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+              >
+                Our Vision
+                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/research"
+                className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
+              >
+                See Our Research
+              </Link>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
-            Reign the{" "}
-            <span className="gradient-text">dragon</span>
-          </h1>
-
-          <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-10">
-            AI is the most powerful force humanity has ever created. ReignDragon
-            is a research lab studying how AI agents behave under pressure
-            &mdash; in groups, under risk, across time &mdash; and turning that
-            evidence into governance that works.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/vision"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
-            >
-              Our Vision
-              <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-            <Link
-              href="/research"
-              className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
-            >
-              See Our Research
-            </Link>
+          <div className="relative aspect-square w-full max-w-[520px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-border bg-surface/30">
+            <Image
+              src="/images/hero.png"
+              alt="ReignDragon"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -65,35 +79,49 @@ export default function Home() {
             {
               label: "01",
               title: "Behavioral Experiments",
+              image: "/images/behavioral-experiments.png",
               description:
                 "We run controlled multi-agent simulations where LLMs face high-stakes decisions — cooperation under risk, trust under uncertainty, commons under temptation — to surface the failure modes that don't appear in single-turn benchmarks.",
             },
             {
               label: "02",
               title: "Formal Theory",
+              image: "/images/formal-theory.png",
               description:
                 "We connect agent behavior to mathematical structure: when do optimal policies look risk-averse, when do bounded horizons induce extraction, when does an environment guarantee cooperation? Theory that predicts deployment.",
             },
             {
               label: "03",
               title: "Policy-as-Product",
+              image: "/images/policy-as-product.png",
               description:
                 "Findings become design rules. Consequence regimes, accountability horizons, visibility prompts, memory structures — the everyday levers that decide whether a deployed system serves people or quietly harms them.",
             },
           ].map((pillar) => (
             <div
               key={pillar.label}
-              className="group relative rounded-xl border border-border bg-surface/50 p-8"
+              className="group relative rounded-xl border border-border bg-surface/50 overflow-hidden flex flex-col"
             >
-              <span className="font-mono text-xs text-accent mb-4 block">
-                {pillar.label}
-              </span>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                {pillar.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-text-secondary">
-                {pillar.description}
-              </p>
+              <div className="relative aspect-[4/3] w-full bg-surface/30">
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <span className="font-mono text-xs text-accent mb-4 block">
+                  {pillar.label}
+                </span>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  {pillar.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -111,30 +139,52 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-xl border border-border bg-surface/50 p-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Agents are leaving the sandbox
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              LLMs are no longer answering single questions. They are coordinating
-              in groups, holding budgets, taking actions across long horizons,
-              and affecting people who never see them. The behaviors that matter
-              now &mdash; trust, restraint, cooperation, foresight &mdash; emerge
-              between agents and over time, not in any one prompt.
-            </p>
+          <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
+            <div className="relative aspect-[16/9] w-full bg-surface/30">
+              <Image
+                src="/images/why-it-matters.png"
+                alt="Agents are leaving the sandbox"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Agents are leaving the sandbox
+              </h3>
+              <p className="text-text-secondary leading-relaxed">
+                LLMs are no longer answering single questions. They are coordinating
+                in groups, holding budgets, taking actions across long horizons,
+                and affecting people who never see them. The behaviors that matter
+                now &mdash; trust, restraint, cooperation, foresight &mdash; emerge
+                between agents and over time, not in any one prompt.
+              </p>
+            </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-surface/50 p-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Structure beats sentiment
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              Our experiments keep finding the same thing: capability is not the
-              bottleneck. The same model cooperates or self-destructs depending
-              on consequence design, accountability horizon, and who is made
-              visible. These are governance choices, and they are cheap to fix
-              &mdash; if we know to fix them.
-            </p>
+          <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
+            <div className="relative aspect-[16/9] w-full bg-surface/30">
+              <Image
+                src="/images/structure-beats-sentiment.png"
+                alt="Structure beats sentiment"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Structure beats sentiment
+              </h3>
+              <p className="text-text-secondary leading-relaxed">
+                Our experiments keep finding the same thing: capability is not the
+                bottleneck. The same model cooperates or self-destructs depending
+                on consequence design, accountability horizon, and who is made
+                visible. These are governance choices, and they are cheap to fix
+                &mdash; if we know to fix them.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -148,6 +198,16 @@ export default function Home() {
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
             Our story
           </span>
+        </div>
+
+        <div className="relative aspect-[16/9] w-full mb-10 rounded-xl overflow-hidden border border-border bg-surface/30">
+          <Image
+            src="/images/our-story.png"
+            alt="Our story"
+            fill
+            sizes="(max-width: 1024px) 100vw, 768px"
+            className="object-cover"
+          />
         </div>
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
