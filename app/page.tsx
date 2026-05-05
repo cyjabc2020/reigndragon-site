@@ -50,7 +50,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.03em] text-foreground mb-8">
               Reign the{" "}
               <span className="gradient-text">dragon</span>
             </h1>
@@ -67,10 +67,10 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/research"
+                href="/findings"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors backdrop-blur-sm"
               >
-                Read the Research
+                See the Findings
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -79,7 +79,7 @@ export default function Home() {
                 href="/who-we-serve"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors backdrop-blur-sm"
               >
-                Partner With Us
+                Brief the Lab
               </Link>
             </div>
           </div>
@@ -282,29 +282,35 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
-            <div className="relative aspect-[16/9] w-full bg-surface/30">
-              <Image
-                src="/images/structure-beats-sentiment.png"
-                alt="Structure beats sentiment"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                The same worker, different institution
-              </h3>
-              <p className="text-text-secondary leading-relaxed">
-                The same AI worker can cooperate or defect depending on the
-                institution it inhabits. The same model can be safe in isolation
-                and dangerous in a population. The same rule can look reasonable
-                in policy language and fail catastrophically in deployment.
-                ReignDragon is built to find those failures before they become
-                infrastructure.
+          {/* Typographic exhibit — breaks the image rhythm with a structural,
+              three-clause statement rendered as type instead of artwork. */}
+          <div className="rounded-xl border border-accent/15 bg-gradient-to-br from-accent/[0.04] to-transparent p-8 sm:p-10 flex flex-col justify-between min-h-[320px]">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-6">
+                Exhibit
               </p>
+              <div className="space-y-4 text-foreground leading-[1.25]">
+                <p className="text-xl sm:text-2xl font-semibold tracking-tight">
+                  We design the{" "}
+                  <span className="text-accent">institutions</span> AI workers
+                  inhabit.
+                </p>
+                <p className="text-xl sm:text-2xl font-semibold tracking-tight">
+                  We engineer the{" "}
+                  <span className="text-accent">accountability</span> that
+                  decides whether they cooperate.
+                </p>
+                <p className="text-xl sm:text-2xl font-semibold tracking-tight">
+                  We build the{" "}
+                  <span className="text-accent">governance</span> that turns
+                  safe behavior into the equilibrium.
+                </p>
+              </div>
             </div>
+            <p className="mt-8 text-sm text-text-secondary leading-relaxed">
+              The same model is safe in isolation and dangerous in a workforce.
+              ReignDragon is built to design the structure that decides which.
+            </p>
           </div>
         </div>
       </section>
@@ -405,28 +411,40 @@ export default function Home() {
           />
         </div>
 
-        <div className="space-y-6 text-text-secondary leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-[1.1] tracking-[-0.02em]">
+          Governance is not a manifesto.{" "}
+          <span className="gradient-text">It is an operating system.</span>
+        </h2>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
             The twentieth century built institutions for human labor: firms,
             contracts, labor law, management systems, fiduciary duties, unions,
-            compliance departments, courts, regulators, and public agencies.
+            compliance departments, courts, regulators.
           </p>
           <p>
-            The twenty-first century will need institutions for AI labor. AI
-            workers will not simply execute commands &mdash; they will make
-            decisions, negotiate tradeoffs, allocate scarce resources, manage
-            risk, and act on behalf of humans at scale.
+            The twenty-first century will need institutions for AI labor. Most
+            of what passes for AI governance today is a{" "}
+            <span className="text-foreground font-medium">wishlist</span>{" "}
+            &mdash; principles, frameworks, declarations.{" "}
+            <span className="text-foreground font-medium">
+              ReignDragon treats governance as a product
+            </span>
+            : designed in controlled experiments, validated against measurable
+            failure modes, and shipped as concrete levers.
           </p>
-          <p className="text-foreground font-medium">
+          <p className="text-foreground font-medium text-xl">
             The question is not whether the AI workforce will arrive. It is
             whether it will be governed.
           </p>
           <p>
-            ReignDragon exists to build the empirical science that makes
-            governance possible &mdash; AI workforces that are cooperative,
-            accountable, welfare-preserving, and resilient by design, not
-            because every AI worker is perfect, but because the system around
-            them makes safe behavior the equilibrium.
+            We build AI workforces that are{" "}
+            <span className="text-accent">cooperative</span>,{" "}
+            <span className="text-accent">accountable</span>,{" "}
+            <span className="text-accent">welfare-preserving</span>, and{" "}
+            <span className="text-accent">resilient</span> by design &mdash;
+            not because every AI worker is perfect, but because the system
+            around them makes safe behavior the equilibrium.
           </p>
         </div>
       </section>
@@ -442,24 +460,28 @@ export default function Home() {
           </span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
-          AI workforces are moving from imagination to deployment.
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-[1.05] tracking-[-0.02em]">
+          Governance always arrives late.{" "}
+          <span className="gradient-text">We are arriving on time.</span>
         </h2>
 
-        <div className="space-y-6 text-text-secondary leading-relaxed">
+        <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            Enterprises are already adopting agentic systems at scale, while
-            governance frameworks race to catch up. The market is building AI
-            labor faster than it is building the labor science, safety science,
-            and institutional design discipline required to govern it.
-          </p>
-          <p className="text-foreground font-medium">
-            This is the opening.
+            Every prior labor transformation &mdash; industrial, financial,
+            digital &mdash; built its institutions decades after the damage
+            was done. Antitrust law arrived after the trusts. Workplace
+            safety arrived after the factories. Securities regulation
+            arrived after the crash.
           </p>
           <p>
-            ReignDragon&rsquo;s category is not another agent platform. It is
-            the science of how AI workforces behave &mdash; and how to govern
-            them before their defaults harden into infrastructure.
+            The AI workforce is being deployed at enterprise scale right
+            now. The governance science needed to make it cooperative,
+            accountable, and welfare-preserving does not yet exist as a
+            field.
+          </p>
+          <p className="text-foreground font-medium text-xl">
+            ReignDragon is building it, before the defaults harden into
+            infrastructure.
           </p>
         </div>
       </section>
@@ -481,16 +503,16 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/research"
+              href="/findings"
               className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
             >
-              Read the Research
+              See the Findings
             </Link>
             <Link
-              href="/about"
+              href="/who-we-serve"
               className="inline-flex h-11 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
             >
-              Contact the Lab
+              Brief the Lab
             </Link>
           </div>
         </div>
