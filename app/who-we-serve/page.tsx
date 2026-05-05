@@ -83,7 +83,7 @@ export default function WhoWeServePage() {
                 {audience.number}
               </span>
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary mb-2">
+                <p className="font-mono text-sm sm:text-base uppercase tracking-[0.15em] text-accent mb-3">
                   For {audience.title}
                 </p>
                 <h2 className="text-xl font-semibold text-foreground mb-3 leading-snug">

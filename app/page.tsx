@@ -204,7 +204,7 @@ export default function Home() {
             {
               label: "03",
               title: "Welfare Accounting",
-              image: "/images/policy-as-product.png",
+              image: "/images/welfare.png",
               description:
                 "Measure not only whether tasks succeed, but who benefits, who bears risk, and when local success produces collective harm.",
             },
