@@ -334,35 +334,6 @@ export default function Home() {
 
       <div className="glow-line mx-6" />
 
-      {/* Latest Post Teaser */}
-      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-        <div className="mb-8 flex items-center gap-3">
-          <div className="h-px w-8 bg-accent/40" />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
-            Latest
-          </span>
-        </div>
-
-        <Link href="/thoughts/the-root-series-ep4-the-point-of-no-return" className="group block">
-          <article className="rounded-xl border border-border bg-surface/50 p-8 sm:p-10 hover:bg-surface-hover hover:border-accent/20 transition-all">
-            <span className="font-mono text-xs text-accent">The Root Series</span>
-            <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-foreground group-hover:text-accent transition-colors">
-              EP4: The Point of No Return
-            </h2>
-            <p className="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-              Why a single conversation can permanently collapse a relationship.
-              The hidden psychology behind proposals, rejection, and the cliff.
-            </p>
-            <div className="mt-6 flex items-center text-sm font-medium text-text-tertiary group-hover:text-accent transition-colors">
-              Read more
-              <svg className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </article>
-        </Link>
-      </section>
-
       {/* Signal Section */}
       <section className="mx-auto max-w-6xl px-6 pb-14 sm:pb-20">
         <div className="rounded-xl border border-accent/10 bg-accent/[0.02] p-10 sm:p-14 text-center">
