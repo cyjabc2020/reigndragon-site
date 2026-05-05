@@ -55,28 +55,31 @@ export default function Home() {
               <span className="gradient-text">dragon</span>
             </h1>
 
-            <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-10">
-              AI is the most powerful force humanity has ever created. ReignDragon
-              is a research lab studying how AI agents behave under pressure
-              &mdash; in groups, under risk, across time &mdash; and turning that
-              evidence into governance that works.
+            <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-4">
+              The empirical safety lab for the age of multi-agent AI.
+            </p>
+            <p className="max-w-xl text-base leading-relaxed text-text-secondary mb-10">
+              AI is leaving the sandbox. Agents are coordinating in groups, holding
+              budgets, and making decisions that affect people who never see them.
+              ReignDragon studies how these populations behave &mdash; and turns
+              that evidence into governance that works.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/vision"
+                href="/research"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors backdrop-blur-sm"
               >
-                Our Vision
+                Explore the Research
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link
-                href="/research"
+                href="/about"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors backdrop-blur-sm"
               >
-                See Our Research
+                Partner With Us
               </Link>
             </div>
           </div>
@@ -101,21 +104,21 @@ export default function Home() {
               title: "Behavioral Experiments",
               image: "/images/behavioral-experiments.png",
               description:
-                "We run controlled multi-agent simulations where LLMs face high-stakes decisions — cooperation under risk, trust under uncertainty, commons under temptation — to surface the failure modes that don't appear in single-turn benchmarks.",
+                "We place AI agents in high-stakes multi-agent environments and measure how they cooperate, defect, trust, punish, and fail — surfacing the population-level risks that single-turn evaluations cannot see.",
             },
             {
               label: "02",
               title: "Formal Theory",
               image: "/images/formal-theory.png",
               description:
-                "We connect agent behavior to mathematical structure: when do optimal policies look risk-averse, when do bounded horizons induce extraction, when does an environment guarantee cooperation? Theory that predicts deployment.",
+                "We connect behavior to structure. Which environments make defection optimal? Which horizons collapse cooperation? Which information regimes make trust stable? Not anecdote — predictive science.",
             },
             {
               label: "03",
               title: "Policy-as-Product",
               image: "/images/policy-as-product.png",
               description:
-                "Findings become design rules. Consequence regimes, accountability horizons, visibility prompts, memory structures — the everyday levers that decide whether a deployed system serves people or quietly harms them.",
+                "Findings become governance levers. Consequence regimes, accountability horizons, visibility, memory, deployment-readiness benchmarks — the everyday choices that decide whether multi-agent systems serve people or quietly harm them.",
             },
           ].map((pillar) => (
             <div
@@ -163,7 +166,7 @@ export default function Home() {
             <div className="relative aspect-[16/9] w-full bg-surface/30">
               <Image
                 src="/images/why-it-matters.png"
-                alt="Agents are leaving the sandbox"
+                alt="They will not fail like chatbots"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -171,14 +174,15 @@ export default function Home() {
             </div>
             <div className="p-8">
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                Agents are leaving the sandbox
+                They will not fail like chatbots
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                LLMs are no longer answering single questions. They are coordinating
-                in groups, holding budgets, taking actions across long horizons,
-                and affecting people who never see them. The behaviors that matter
-                now &mdash; trust, restraint, cooperation, foresight &mdash; emerge
-                between agents and over time, not in any one prompt.
+                Coding swarms. Marketplace traders. Autonomous services.
+                Recommendation ecosystems. These systems will fail like economies
+                &mdash; over-extracting shared resources, defecting at the end of
+                short horizons, exploiting bad rules, optimizing locally while
+                destroying welfare globally. Single-agent benchmarks cannot see
+                these failures.
               </p>
             </div>
           </div>
@@ -198,14 +202,89 @@ export default function Home() {
                 Structure beats sentiment
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                Our experiments keep finding the same thing: capability is not the
-                bottleneck. The same model cooperates or self-destructs depending
-                on consequence design, accountability horizon, and who is made
-                visible. These are governance choices, and they are cheap to fix
-                &mdash; if we know to fix them.
+                Capability is not the bottleneck. The same model cooperates or
+                self-destructs depending on consequence design, accountability
+                horizon, and who is made visible. If structure determines behavior,
+                governance is not guesswork &mdash; there are levers, they can be
+                measured, and they can be pulled.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* What we have found */}
+      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            What we have found
+          </span>
+        </div>
+
+        <p className="max-w-2xl text-text-secondary leading-relaxed mb-10">
+          Four results from the lab so far. Each one points to a structural lever
+          that decides whether multi-agent systems serve people or quietly harm
+          them.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              tag: "Creeping Trap",
+              headline:
+                "Individually sensible agents can produce collective harm.",
+              body:
+                "LLM agents repeatedly over-extracted from a shared-risk commons. Across the main confirmatory study, 396 of 400 episodes were welfare-negative — even though behavior sat near a local best-response region. Not random irrationality; sensible behavior producing population-level failure.",
+            },
+            {
+              tag: "Trust Under Fire",
+              headline: "Trust can scar.",
+              body:
+                "A single early partner failure created persistent distrust. Even after the partner became reliable for many subsequent games, agents kept verifying and excluding the formerly unreliable partner at elevated rates. Higher reasoning improved coordination, but did not erase the scar.",
+            },
+            {
+              tag: "Prospect Theory from Bellman",
+              headline: "Risk preferences can come from environment structure.",
+              body:
+                "In MDPs with absorbing catastrophic states, risk-neutral agents produced prospect-theory-like behavior: S-shaped value functions, endogenous loss sensitivity, reflection-effect policy reversals. What looks like “bias” can emerge from optimal control near irreversible failure.",
+            },
+            {
+              tag: "No Safe Default",
+              headline: "There is no safe default governance rule.",
+              body:
+                "Five consequence regimes, tested in a crisis-fund game. Progressive punishment performed best on average — but every regime contained “death-trap” configurations. The worst regimes failed catastrophically across large parts of the design space. Governance is part of the system, not a wrapper around it.",
+            },
+          ].map((finding) => (
+            <div
+              key={finding.tag}
+              className="rounded-xl border border-border bg-surface/50 p-8"
+            >
+              <span className="font-mono text-xs text-accent mb-4 block uppercase tracking-[0.15em]">
+                {finding.tag}
+              </span>
+              <h3 className="text-lg font-semibold text-foreground mb-3 leading-snug">
+                {finding.headline}
+              </h3>
+              <p className="text-sm leading-relaxed text-text-secondary">
+                {finding.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10">
+          <Link
+            href="/findings"
+            className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+          >
+            See the full findings
+            <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </section>
 
@@ -232,24 +311,23 @@ export default function Home() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            ReignDragon began with a simple observation: every serious account
-            of AI risk eventually becomes an account of incentives, institutions,
-            and human nature &mdash; topics economics and psychology have studied
-            for a century, but that the AI field keeps re-deriving from scratch.
+            ReignDragon exists because every serious account of AI risk eventually
+            becomes an account of incentives, institutions, and human nature
+            &mdash; fields economics and psychology have studied for a century,
+            but that AI governance often rediscovers too late.
           </p>
           <p>
-            We built a lab to close that gap. We design experiments that put
-            language models into the situations our institutions were built to
-            handle &mdash; collective action, repeated trust, decisions near
-            catastrophe, fixed terms of office &mdash; and we measure what
-            actually happens, episode by episode, at scale.
+            The twentieth century built institutions for human-only societies:
+            markets, courts, contracts, antitrust law, public-goods mechanisms.
+            The twenty-first century will include billions of artificial
+            decision-makers that price, negotiate, recommend, allocate, and act
+            on behalf of people. We need a science that explains how these
+            populations behave &mdash; and how to govern them before their
+            defaults harden.
           </p>
           <p>
-            What we find is consistent and useful: AI agents inherit recognizable
-            patterns from the data they were trained on, and they break in
-            recognizable ways when the structure around them is wrong. That is
-            both a warning and a gift. It means governance is not guesswork. It
-            means there are levers, and they can be pulled.
+            That is what we are building. Not a wrapper around agents. The
+            institutional science of AI civilization.
           </p>
         </div>
       </section>
@@ -291,11 +369,27 @@ export default function Home() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-6">
             Signal
           </p>
-          <p className="text-2xl sm:text-3xl font-semibold text-foreground leading-snug max-w-2xl mx-auto">
+          <p className="text-2xl sm:text-3xl font-semibold text-foreground leading-snug max-w-2xl mx-auto mb-4">
             Reign the dragon.
-            <br />
-            <span className="text-text-secondary">Advance the civilization.</span>
           </p>
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
+            The future will not be governed by sentiment. It will be governed by
+            structure. ReignDragon builds that structure.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/research"
+              className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+            >
+              Read the Research
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
+            >
+              Contact the Lab
+            </Link>
+          </div>
         </div>
       </section>
     </div>
