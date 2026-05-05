@@ -4,57 +4,64 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Multi-agent behavioral experiments and formal theory for AI governance and policy-as-product.",
+    "Behavioral experiments, formal theory, welfare accounting, and policy-as-product for the AI workforce.",
 };
 
 const projects = [
   {
     status: "Active",
-    title: "Trust Dynamics in Multi-Agent LLM Systems",
+    title: "Trust Dynamics in AI Workforces",
     description:
-      "How do agents build, lose, and recover trust across repeated interactions? We study the conditions under which a single early failure leaves a lasting mark — and the structural choices (reasoning effort, memory, verification protocols) that shape whether groups of agents can coordinate at all when the stakes are real.",
+      "How do AI workers build, lose, and recover trust across repeated interactions in an organization? We study the conditions under which a single early failure leaves a lasting mark — and the structural choices (reasoning effort, memory, verification protocols, trust-repair mechanisms) that shape whether teams of AI workers can coordinate at all when the stakes are real.",
     tags: ["Multi-Agent", "Trust", "Coordination", "Memory"],
   },
   {
     status: "Active",
     title: "Consequence Design for Cooperation",
     description:
-      "Cooperation in agent systems is not a property of the model — it is a property of the rules around the model. We map how different consequence regimes (proportional, progressive, all-or-nothing, regressive) shape cooperation, exploitation, and catastrophic failure, and identify the configurations where each regime quietly breaks.",
+      "Cooperation in an AI workforce is not a property of the model — it is a property of the institution around the model. We map how different consequence regimes (proportional, progressive, all-or-nothing, regressive) shape cooperation, exploitation, and catastrophic failure, and identify the configurations where each regime quietly breaks.",
     tags: ["Mechanism Design", "Cooperation", "Game Theory"],
   },
   {
     status: "Active",
     title: "Risk and Decision Theory in Optimal Control",
     description:
-      "When environments contain absorbing failure states, optimal policies start to look strikingly human — risk-averse near the cliff in growth regimes, risk-seeking near the cliff in decline. We derive the structural conditions that produce these patterns and connect them to long-standing puzzles in behavioral economics.",
+      "When environments contain absorbing failure states, optimal policies start to look strikingly human — risk-averse near the cliff in growth regimes, risk-seeking near the cliff in decline. We derive the structural conditions that produce these patterns and connect them to long-standing puzzles in behavioral economics. What looks like model bias is often institutional structure.",
     tags: ["Decision Theory", "MDP", "Prospect Theory", "Applied Math"],
   },
   {
     status: "Active",
     title: "Long-Horizon Behavior and Accountability",
     description:
-      "Many real deployments give agents fixed terms, finite horizons, or short-window incentives. We study what happens when these conditions meet a shared resource: when does an agent extract too much, rationalize doing it, and become invisible to the people it harms? And which deployment-time choices reverse the pattern cheaply?",
+      "Many real deployments give AI workers fixed terms, finite horizons, or short-window incentives. We study what happens when these conditions meet a shared resource: when does a worker extract too much, rationalize doing it, and become invisible to the people it harms? And which deployment-time choices reverse the pattern cheaply?",
     tags: ["Long Horizon", "Commons", "Incentives", "Accountability"],
+  },
+  {
+    status: "Active",
+    title: "Welfare Accounting for AI Workforces",
+    description:
+      "Most evaluation asks whether tasks succeed. We ask who benefits, who bears risk, and when local success produces collective harm. Welfare-accounted simulations and benchmarks for AI workforces operating on behalf of stakeholders who never see the prompt.",
+    tags: ["Welfare", "Stakeholders", "Evaluation"],
   },
   {
     status: "Active",
     title: "Policy-as-Product Frameworks",
     description:
-      "Translating experimental findings into design rules for the people deploying agent systems. Consequence regimes, accountability horizons, visibility prompts, memory structure, measurement choices — the everyday levers, the failure modes they prevent, and the evidence behind each rule.",
+      "Translating experimental findings into design rules for the people deploying AI workforces. Bystander visibility, accountability horizons, review windows, memory structure, trust repair, consequence design — the levers, the failure modes they prevent, and the evidence behind each rule.",
     tags: ["Policy", "Evaluation", "Deployment"],
   },
   {
     status: "Upcoming",
     title: "Context-Specific Governance Evaluation",
     description:
-      "Every domain — healthcare, finance, education, defense — has its own failure modes and trade-offs. We are building tailored evaluation frameworks that move beyond one-size-fits-all checklists toward governance shaped by the structure of each setting.",
+      "Every domain — healthcare, finance, education, defense — has its own failure modes and trade-offs for AI labor. We are building tailored evaluation frameworks that move beyond one-size-fits-all checklists toward governance shaped by the structure of each setting.",
     tags: ["Healthcare", "Finance", "Education", "Defense"],
   },
   {
     status: "Upcoming",
     title: "AI as a Mirror: Societal Reflection Studies",
     description:
-      "The patterns we find in artificial agents — negativity bias, short-horizon extraction, bystander invisibility — are not the model's invention. They are inherited from us. We use multi-agent experiments as a diagnostic tool for the institutions, incentives, and blind spots of the societies that built the training data.",
+      "The patterns we find in artificial workers — negativity bias, short-horizon extraction, bystander invisibility — are not the model's invention. They are inherited from us. We use multi-agent experiments as a diagnostic tool for the institutions, incentives, and blind spots of the societies that built the training data.",
     tags: ["Society", "Bias", "Institutions"],
   },
 ];
@@ -63,22 +70,22 @@ const themes = [
   {
     title: "Behavior under stakes",
     detail:
-      "What agents do when the cost of being wrong is real — not what they say they would do in the abstract.",
+      "What AI workers do when the cost of being wrong is real — not what they say they would do in the abstract.",
   },
   {
     title: "Structure over capability",
     detail:
-      "The same model can cooperate or self-destruct depending on the rules around it. We map which rules matter.",
+      "The same model can cooperate or self-destruct depending on the institution around it. We map which rules matter.",
+  },
+  {
+    title: "Welfare, not just task success",
+    detail:
+      "Who benefits, who bears risk, who is invisible to the prompt. The metrics that matter for an AI workforce on behalf of people.",
   },
   {
     title: "Cheap interventions",
     detail:
-      "We look hardest for the prompt-, horizon-, and visibility-level fixes that change outcomes without changing the model.",
-  },
-  {
-    title: "Theory that predicts",
-    detail:
-      "Where simulation reveals a pattern, we look for the formal structure that explains it — and would have predicted it.",
+      "We look hardest for the role-, horizon-, and visibility-level fixes that change outcomes without changing the model.",
   },
 ];
 
@@ -100,9 +107,10 @@ export default function ResearchPage() {
             </h1>
 
             <p className="max-w-2xl text-lg text-text-secondary leading-relaxed">
-              We study how AI agents behave in groups, under risk, and across time
-              &mdash; through controlled multi-agent simulation, formal theory, and
-              translation into deployment-ready design rules.
+              We study how AI workers behave inside organizations, markets, and
+              institutions &mdash; through controlled simulation, formal
+              theory, welfare accounting, and translation into deployment-ready
+              design rules.
             </p>
           </div>
 
@@ -116,6 +124,70 @@ export default function ResearchPage() {
               className="object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* Method */}
+      <section className="mx-auto max-w-4xl px-6 py-16">
+        <div className="mb-10 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            The ReignDragon method
+          </span>
+        </div>
+
+        <p className="max-w-2xl text-text-secondary leading-relaxed mb-10">
+          We build controlled economies for AI workers &mdash; artificial
+          organizations, markets, crisis rooms, commons, and governance
+          environments &mdash; and measure what happens. Welfare-accounted
+          simulations, formal baselines, behavioral benchmarks, and deployable
+          governance rules.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {[
+            {
+              label: "01",
+              title: "Behavioral Experiments",
+              detail:
+                "Place AI workers in high-stakes social and organizational environments and observe how they cooperate, defect, trust, punish, free-ride, and fail.",
+            },
+            {
+              label: "02",
+              title: "Formal Theory",
+              detail:
+                "Connect observed behavior to structure: incentives, horizons, information, payoff geometry, consequence regimes, and governance rules.",
+            },
+            {
+              label: "03",
+              title: "Welfare Accounting",
+              detail:
+                "Measure not only whether tasks succeed, but who benefits, who bears risk, and when local success produces collective harm.",
+            },
+            {
+              label: "04",
+              title: "Policy-as-Product",
+              detail:
+                "Translate findings into concrete levers: bystander visibility, accountability horizons, review windows, memory structures, trust repair, and consequence design.",
+            },
+          ].map((m) => (
+            <div
+              key={m.label}
+              className="rounded-xl border border-border bg-surface/50 p-6"
+            >
+              <span className="font-mono text-xs text-accent mb-3 block">
+                {m.label}
+              </span>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {m.title}
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {m.detail}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -226,8 +298,8 @@ export default function ResearchPage() {
             Collaborate
           </p>
           <p className="text-lg text-text-secondary max-w-lg mx-auto">
-            Interested in our research or want to collaborate on governance
-            frameworks? Reach out at{" "}
+            Interested in our research or want to collaborate on AI workforce
+            governance? Reach out at{" "}
             <span className="text-accent">hello@reigndragon.com</span>
           </p>
         </div>

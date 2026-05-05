@@ -56,13 +56,12 @@ export default function Home() {
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-4">
-              The empirical safety lab for the age of multi-agent AI.
+              The empirical safety lab for the AI workforce.
             </p>
             <p className="max-w-xl text-base leading-relaxed text-text-secondary mb-10">
-              AI is leaving the sandbox. Agents are coordinating in groups, holding
-              budgets, and making decisions that affect people who never see them.
-              ReignDragon studies how these populations behave &mdash; and turns
-              that evidence into governance that works.
+              AI is becoming labor. ReignDragon builds the science, benchmarks,
+              and governance levers for fleets of AI workers operating inside
+              companies, markets, governments, and platforms.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -70,13 +69,13 @@ export default function Home() {
                 href="/research"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors backdrop-blur-sm"
               >
-                Explore the Research
+                Read the Research
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link
-                href="/about"
+                href="/who-we-serve"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors backdrop-blur-sm"
               >
                 Partner With Us
@@ -88,37 +87,132 @@ export default function Home() {
 
       <div className="glow-line mx-6" />
 
-      {/* What we do */}
+      {/* AI is becoming labor */}
+      <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            The shift
+          </span>
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 leading-tight">
+          AI is becoming <span className="gradient-text">labor</span>.
+        </h2>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed">
+          <p>
+            Not software that waits for instructions. Not chatbots that answer
+            questions. Not isolated agents completing isolated tasks.
+          </p>
+          <p>
+            A new workforce is forming: fleets of AI workers that write code,
+            trade, price, negotiate, allocate resources, manage workflows,
+            advise decision-makers, represent users, and coordinate with one
+            another inside companies, markets, governments, and platforms.
+          </p>
+          <p className="text-foreground font-medium">
+            That workforce will not fail like a model. It will fail like an
+            organization.
+          </p>
+          <ul className="space-y-2 pl-1 text-text-secondary">
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will develop incentives.</span></li>
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will inherit bad institutions.</span></li>
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will over-optimize local goals.</span></li>
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will lose trust after early shocks.</span></li>
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will exploit weak rules.</span></li>
+            <li className="flex gap-3"><span className="text-accent shrink-0">·</span><span>It will create harm for stakeholders who were never represented in the prompt.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* The Question */}
+      <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            The question
+          </span>
+        </div>
+
+        <div className="space-y-6">
+          <div className="rounded-xl border border-border bg-surface/30 p-6">
+            <p className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary mb-2">
+              Old AI safety question
+            </p>
+            <p className="text-lg text-text-secondary leading-snug">
+              Can this model do the task?
+            </p>
+          </div>
+          <div className="rounded-xl border border-accent/20 bg-accent/[0.04] p-6">
+            <p className="font-mono text-xs uppercase tracking-[0.15em] text-accent mb-2">
+              The new question
+            </p>
+            <p className="text-lg text-foreground leading-snug font-medium">
+              What happens when AI workers operate together inside real
+              institutions?
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-8 text-text-secondary leading-relaxed">
+          Single-agent benchmarks test capability. ReignDragon tests
+          institutional behavior &mdash; what happens when AI workers compete
+          for resources, face short deadlines, are evaluated by rankings,
+          inherit failures from previous agents, and act on behalf of
+          stakeholders who are invisible to the prompt.
+        </p>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* The ReignDragon Method */}
       <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
         <div className="mb-10 flex items-center gap-3">
           <div className="h-px w-8 bg-accent/40" />
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
-            What we do
+            The ReignDragon method
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <p className="max-w-2xl text-text-secondary leading-relaxed mb-10">
+          We build controlled economies for AI workers &mdash; artificial
+          organizations, markets, crisis rooms, commons, and governance
+          environments &mdash; and measure what happens. Not vibes. Not
+          anecdotes. Not demos.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
               label: "01",
               title: "Behavioral Experiments",
               image: "/images/behavioral-experiments.png",
               description:
-                "We place AI agents in high-stakes multi-agent environments and measure how they cooperate, defect, trust, punish, and fail — surfacing the population-level risks that single-turn evaluations cannot see.",
+                "Place AI workers in high-stakes social and organizational environments and observe how they cooperate, defect, trust, punish, free-ride, and fail.",
             },
             {
               label: "02",
               title: "Formal Theory",
               image: "/images/formal-theory.png",
               description:
-                "We connect behavior to structure. Which environments make defection optimal? Which horizons collapse cooperation? Which information regimes make trust stable? Not anecdote — predictive science.",
+                "Connect observed behavior to structure: incentives, horizons, information, payoff geometry, consequence regimes, and governance rules.",
             },
             {
               label: "03",
+              title: "Welfare Accounting",
+              image: "/images/policy-as-product.png",
+              description:
+                "Measure not only whether tasks succeed, but who benefits, who bears risk, and when local success produces collective harm.",
+            },
+            {
+              label: "04",
               title: "Policy-as-Product",
               image: "/images/policy-as-product.png",
               description:
-                "Findings become governance levers. Consequence regimes, accountability horizons, visibility, memory, deployment-readiness benchmarks — the everyday choices that decide whether multi-agent systems serve people or quietly harm them.",
+                "Translate findings into concrete levers: bystander visibility, accountability horizons, review windows, memory structures, trust repair, and consequence design.",
             },
           ].map((pillar) => (
             <div
@@ -130,7 +224,7 @@ export default function Home() {
                   src={pillar.image}
                   alt={pillar.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -166,7 +260,7 @@ export default function Home() {
             <div className="relative aspect-[16/9] w-full bg-surface/30">
               <Image
                 src="/images/why-it-matters.png"
-                alt="They will not fail like chatbots"
+                alt="Most AI work studies the worker. We study the workforce."
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -174,15 +268,15 @@ export default function Home() {
             </div>
             <div className="p-8">
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                They will not fail like chatbots
+                Most AI work studies the worker. We study the workforce.
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                Coding swarms. Marketplace traders. Autonomous services.
-                Recommendation ecosystems. These systems will fail like economies
-                &mdash; over-extracting shared resources, defecting at the end of
-                short horizons, exploiting bad rules, optimizing locally while
-                destroying welfare globally. Single-agent benchmarks cannot see
-                these failures.
+                Most AI companies build workers. Most AI labs evaluate workers.
+                Most governance groups write principles about workers. ReignDragon
+                studies the structure around the worker &mdash; roles, incentives,
+                visibility, memory, rankings, handoffs, deadlines, review windows,
+                consequence regimes, stakeholder representation, and accountability
+                horizons.
               </p>
             </div>
           </div>
@@ -199,14 +293,15 @@ export default function Home() {
             </div>
             <div className="p-8">
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                Structure beats sentiment
+                The same worker, different institution
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                Capability is not the bottleneck. The same model cooperates or
-                self-destructs depending on consequence design, accountability
-                horizon, and who is made visible. If structure determines behavior,
-                governance is not guesswork &mdash; there are levers, they can be
-                measured, and they can be pulled.
+                The same AI worker can cooperate or defect depending on the
+                institution it inhabits. The same model can be safe in isolation
+                and dangerous in a population. The same rule can look reasonable
+                in policy language and fail catastrophically in deployment.
+                ReignDragon is built to find those failures before they become
+                infrastructure.
               </p>
             </div>
           </div>
@@ -225,9 +320,9 @@ export default function Home() {
         </div>
 
         <p className="max-w-2xl text-text-secondary leading-relaxed mb-10">
-          Four results from the lab so far. Each one points to a structural lever
-          that decides whether multi-agent systems serve people or quietly harm
-          them.
+          Four results from the lab so far. Each one points to a structural
+          lever that decides whether AI workforces serve people or quietly
+          harm them.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -235,27 +330,27 @@ export default function Home() {
             {
               tag: "Creeping Trap",
               headline:
-                "Individually sensible agents can produce collective harm.",
+                "AI workers can be individually sensible and collectively harmful.",
               body:
-                "LLM agents repeatedly over-extracted from a shared-risk commons. Across the main confirmatory study, 396 of 400 episodes were welfare-negative — even though behavior sat near a local best-response region. Not random irrationality; sensible behavior producing population-level failure.",
+                "Frontier LLM agents repeatedly over-extracted from a shared-risk commons. The striking result was not that they behaved randomly or irrationally. It was worse: their behavior sat near local best response while producing population-level welfare failure.",
             },
             {
               tag: "Trust Under Fire",
-              headline: "Trust can scar.",
+              headline: "AI workers can carry trust scars.",
               body:
-                "A single early partner failure created persistent distrust. Even after the partner became reliable for many subsequent games, agents kept verifying and excluding the formerly unreliable partner at elevated rates. Higher reasoning improved coordination, but did not erase the scar.",
+                "One early failure by a partner produced persistent distrust. Even after the partner became reliable, agents continued to verify and exclude it at elevated rates. A single organizational failure can become institutional memory.",
             },
             {
               tag: "Prospect Theory from Bellman",
-              headline: "Risk preferences can come from environment structure.",
+              headline: "AI workers respond to structure, not just prompts.",
               body:
-                "In MDPs with absorbing catastrophic states, risk-neutral agents produced prospect-theory-like behavior: S-shaped value functions, endogenous loss sensitivity, reflection-effect policy reversals. What looks like “bias” can emerge from optimal control near irreversible failure.",
+                "Risk patterns that look like psychological bias emerged from the structure of the environment itself. What appears to be a model behavior may actually be an institutional effect — optimal control near irreversible failure produces what looks like loss aversion.",
             },
             {
               tag: "No Safe Default",
-              headline: "There is no safe default governance rule.",
+              headline: "There is no safe default for AI workforce governance.",
               body:
-                "Five consequence regimes, tested in a crisis-fund game. Progressive punishment performed best on average — but every regime contained “death-trap” configurations. The worst regimes failed catastrophically across large parts of the design space. Governance is part of the system, not a wrapper around it.",
+                "Different consequence regimes produced radically different cooperation outcomes. Every governance rule contained death-trap configurations. The conclusion is simple: how you structure accountability determines how the AI workforce behaves.",
             },
           ].map((finding) => (
             <div
@@ -311,23 +406,59 @@ export default function Home() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            ReignDragon exists because every serious account of AI risk eventually
-            becomes an account of incentives, institutions, and human nature
-            &mdash; fields economics and psychology have studied for a century,
-            but that AI governance often rediscovers too late.
+            The twentieth century built institutions for human labor: firms,
+            contracts, labor law, management systems, fiduciary duties, unions,
+            compliance departments, courts, regulators, and public agencies.
           </p>
           <p>
-            The twentieth century built institutions for human-only societies:
-            markets, courts, contracts, antitrust law, public-goods mechanisms.
-            The twenty-first century will include billions of artificial
-            decision-makers that price, negotiate, recommend, allocate, and act
-            on behalf of people. We need a science that explains how these
-            populations behave &mdash; and how to govern them before their
-            defaults harden.
+            The twenty-first century will need institutions for AI labor. AI
+            workers will not simply execute commands &mdash; they will make
+            decisions, negotiate tradeoffs, allocate scarce resources, manage
+            risk, and act on behalf of humans at scale.
+          </p>
+          <p className="text-foreground font-medium">
+            The question is not whether the AI workforce will arrive. It is
+            whether it will be governed.
           </p>
           <p>
-            That is what we are building. Not a wrapper around agents. The
-            institutional science of AI civilization.
+            ReignDragon exists to build the empirical science that makes
+            governance possible &mdash; AI workforces that are cooperative,
+            accountable, welfare-preserving, and resilient by design, not
+            because every AI worker is perfect, but because the system around
+            them makes safe behavior the equilibrium.
+          </p>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* Why Now */}
+      <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            Why now
+          </span>
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
+          AI workforces are moving from imagination to deployment.
+        </h2>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed">
+          <p>
+            Enterprises are already adopting agentic systems at scale, while
+            governance frameworks race to catch up. The market is building AI
+            labor faster than it is building the labor science, safety science,
+            and institutional design discipline required to govern it.
+          </p>
+          <p className="text-foreground font-medium">
+            This is the opening.
+          </p>
+          <p>
+            ReignDragon&rsquo;s category is not another agent platform. It is
+            the science of how AI workforces behave &mdash; and how to govern
+            them before their defaults harden into infrastructure.
           </p>
         </div>
       </section>
@@ -341,11 +472,11 @@ export default function Home() {
             Signal
           </p>
           <p className="text-2xl sm:text-3xl font-semibold text-foreground leading-snug max-w-2xl mx-auto mb-4">
-            Reign the dragon.
+            Govern the AI workforce before it governs us.
           </p>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
-            The future will not be governed by sentiment. It will be governed by
-            structure. ReignDragon builds that structure.
+            The future of AI work will be governed by structure. ReignDragon
+            builds that structure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

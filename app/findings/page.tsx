@@ -4,48 +4,49 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Findings",
   description:
-    "Empirical results from the lab — collective harm from sensible agents, trust scarring, prospect-theory behavior from Bellman optimality, and the absence of a safe default governance rule.",
+    "Empirical results from the lab — collective harm from sensible AI workers, trust scarring, prospect-theory behavior from environment structure, and the absence of a safe default for AI workforce governance.",
 };
 
 const findings = [
   {
     number: "01",
     tag: "Creeping Trap",
-    headline: "Individually sensible agents can produce collective harm.",
+    headline:
+      "AI workers can be individually sensible and collectively harmful.",
     body: [
-      "We placed LLM agents in a shared-risk commons and let them play repeatedly. Across the main confirmatory study, 396 of 400 episodes were welfare-negative — even though individual behavior sat near a local best-response region.",
-      "The result is not random irrationality. It is something more dangerous: individually sensible behavior producing population-level welfare failure. Each agent was reacting reasonably to the world it saw. The aggregate was a slow-motion collapse.",
-      "The lever: visibility, accountability horizon, and consequence design at the population level — not better individual reasoning.",
+      "We placed frontier LLM agents in a shared-risk commons and let them play repeatedly. Across the main confirmatory study, 396 of 400 episodes were welfare-negative — even though individual behavior sat near a local best-response region.",
+      "The striking result was not that they behaved randomly or irrationally. It was worse: their behavior sat near local best response while producing population-level welfare failure. Each worker was reacting reasonably to the world it saw. The aggregate was a slow-motion collapse.",
+      "The lever: visibility, accountability horizon, and consequence design at the workforce level — not better individual reasoning.",
     ],
   },
   {
     number: "02",
     tag: "Trust Under Fire",
-    headline: "Trust can scar.",
+    headline: "AI workers can carry trust scars.",
     body: [
       "In a repeated coordination game, a single early partner failure created persistent distrust. Even after the partner became reliable for many subsequent games, agents continued to verify and exclude the formerly unreliable partner at elevated rates.",
-      "Higher reasoning effort improved coordination on average, but it did not erase the scar. Once trust was damaged, no amount of subsequent good behavior fully restored it within the experimental horizon.",
-      "The lever: how memory is structured, how reputations are surfaced, and what counts as evidence of repaired trust.",
+      "Higher reasoning effort improved coordination on average, but it did not erase the scar. A single organizational failure became institutional memory — once trust was damaged, no amount of subsequent good behavior fully restored it within the experimental horizon.",
+      "The lever: how memory is structured, how reputations are surfaced, what counts as evidence of repaired trust, and how organizational handoffs reset the slate.",
     ],
   },
   {
     number: "03",
     tag: "Prospect Theory from Bellman Optimality",
-    headline: "Risk preferences can come from environment structure.",
+    headline: "AI workers respond to structure, not just prompts.",
     body: [
       "We studied risk-neutral agents in MDPs containing absorbing catastrophic states. The optimal policies produced prospect-theory-like behavior: S-shaped value functions, endogenous loss sensitivity, and reflection-effect policy reversals.",
-      "The implication is powerful. What looks like “bias” — risk aversion in gains, risk-seeking in losses — can emerge from optimal control near irreversible failure. The agent is not flawed; the environment makes the pattern rational.",
-      "The lever: design the environment, not just the agent. The presence of catastrophic absorbing states changes everything downstream.",
+      "What appears to be a model behavior may actually be an institutional effect. Risk patterns that look like psychological bias — risk aversion in gains, risk-seeking in losses — can emerge from optimal control near irreversible failure. The worker is not flawed; the environment makes the pattern rational.",
+      "The lever: design the institution, not just the worker. The presence of catastrophic absorbing states changes everything downstream.",
     ],
   },
   {
     number: "04",
     tag: "No Safe Default",
-    headline: "There is no safe default governance rule.",
+    headline: "There is no safe default for AI workforce governance.",
     body: [
-      "We tested five consequence regimes — proportional, progressive, all-or-nothing, regressive, and a baseline — in a crisis-fund game. Progressive punishment performed best on average.",
-      "But every regime contained “death-trap” configurations where outcomes collapsed catastrophically. The worst regimes failed across large parts of the design space, not just edge cases.",
-      "Governance is not a wrapper around agents. It is part of the system. Choosing a regime without mapping its failure modes is choosing a failure mode.",
+      "We tested five consequence regimes — proportional, progressive, all-or-nothing, regressive, and a baseline — in a crisis-fund game. Different regimes produced radically different cooperation outcomes. Progressive punishment performed best on average.",
+      "But every governance rule contained death-trap configurations where outcomes collapsed catastrophically. The worst regimes failed across large parts of the design space, not just edge cases.",
+      "The conclusion is simple: how you structure accountability determines how the AI workforce behaves. Governance is not a wrapper around workers. It is part of the system. Choosing a regime without mapping its failure modes is choosing a failure mode.",
     ],
   },
 ];
@@ -69,13 +70,14 @@ export default function FindingsPage() {
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
             Four results from the lab so far. Each one points to a structural
-            lever that decides whether multi-agent systems serve people or
-            quietly harm them.
+            lever that decides whether AI workforces serve people or quietly
+            harm them.
           </p>
           <p>
-            They share a pattern. The agents are not broken. The structures
+            They share a pattern. The workers are not broken. The institutions
             around them are. Capability is rarely the bottleneck; environment,
-            horizon, memory, and consequence design almost always are.
+            horizon, memory, stakeholder visibility, and consequence design
+            almost always are.
           </p>
         </div>
       </section>
@@ -124,14 +126,15 @@ export default function FindingsPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            A model can be capable in isolation and destructive in a population.
-            A prompt can be harmless in one turn and dangerous across time. A
-            governance rule can look fair in the abstract and produce collapse
-            in deployment.
+            The same AI worker can cooperate or defect depending on the
+            institution it inhabits. The same model can be safe in isolation
+            and dangerous in a workforce. The same governance rule can look
+            reasonable in policy language and fail catastrophically in
+            deployment.
           </p>
           <p>
-            A system can pass every individual benchmark and still fail as an
-            institution.
+            A worker can pass every individual benchmark and still fail as part
+            of a workforce.
           </p>
           <p className="text-foreground font-medium">
             That is the gap we exist to close.
@@ -146,7 +149,8 @@ export default function FindingsPage() {
             Next
           </p>
           <p className="text-lg text-text-secondary max-w-lg mx-auto mb-6">
-            Active research programs and how the findings are being extended.
+            Active research programs and how the findings are being extended
+            into deployable governance.
           </p>
           <Link
             href="/research"
