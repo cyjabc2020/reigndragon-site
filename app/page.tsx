@@ -14,7 +14,7 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover -z-20"
+          className="object-cover object-[78%_center] md:object-[90%_center] -z-20"
         />
         {/* Readability scrim — mobile: heavier full-width darkening because
             the copy spans the entire viewport over the brightest part of the
@@ -55,10 +55,11 @@ export default function Home() {
               <span className="gradient-text">dragon</span>
             </h1>
 
-            <p className="max-w-xl text-lg leading-relaxed text-text-secondary mb-4">
-              The empirical safety lab for the AI workforce.
+            <p className="max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-tight text-foreground mb-6">
+              The empirical safety lab for the{" "}
+              <span className="gradient-text">AI workforce</span>.
             </p>
-            <p className="max-w-xl text-base leading-relaxed text-text-secondary mb-10">
+            <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-10">
               AI is becoming labor. ReignDragon builds the science, benchmarks,
               and governance levers for fleets of AI workers operating inside
               companies, markets, governments, and platforms.
