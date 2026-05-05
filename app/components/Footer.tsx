@@ -29,7 +29,6 @@ export default function Footer() {
                 { href: "/research", label: "Research" },
                 { href: "/findings", label: "Findings" },
                 { href: "/who-we-serve", label: "Who We Serve" },
-                { href: "/thoughts", label: "Thoughts" },
                 { href: "/about", label: "About" },
               ].map((link) => (
                 <Link
