@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-semibold text-foreground text-sm">ReignDragon</span>
             </div>
             <p className="text-text-tertiary text-sm leading-relaxed">
-              AI governance and policy-as-product research lab.
+              The empirical safety lab for the AI workforce.
             </p>
           </div>
 

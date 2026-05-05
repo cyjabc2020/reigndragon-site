@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Who We Serve",
   description:
-    "Population-level safety evaluations for AI labs, design levers for platforms, governance frameworks for policymakers, and open benchmarks for researchers.",
+    "Population-level safety evaluations for AI labs, deployment design rules for enterprises, governance levers for platforms, evidence-based frameworks for policymakers, and open benchmarks for researchers.",
 };
 
 const audiences = [
@@ -12,31 +12,31 @@ const audiences = [
     number: "01",
     title: "AI Labs",
     headline: "Population-level safety evaluations.",
-    body: "Single-agent benchmarks miss the failures that matter for deployment. We provide controlled multi-agent environments that reveal how frontier models behave under risk, across time, and against each other — surfacing welfare collapse, persistent distrust, and exploitative equilibria before they reach users.",
+    body: "Single-agent benchmarks miss the failures that matter when models are deployed as a workforce. We provide controlled multi-agent environments that reveal how frontier models behave under risk, across time, and against each other — surfacing welfare collapse, persistent distrust, and exploitative equilibria before they reach users.",
   },
   {
     number: "02",
-    title: "Platforms",
-    headline: "Design levers for agent-mediated systems.",
-    body: "If your product routes work between agents, settles trades, allocates budgets, or moderates a marketplace, the structural choices around the agents matter more than the agents themselves. We identify the levers — visibility, accountability horizon, consequence regime, memory — that reduce collective-action failure in your specific setting.",
+    title: "Enterprises",
+    headline: "Design rules for deploying AI workers across workflows.",
+    body: "Enterprises are adopting agentic systems at scale, but the failures that matter for an AI workforce don’t look like the failures that matter for a single agent. We help you deploy AI workers across roles, handoffs, and review windows without creating hidden collective failures — so the workforce serves the business and the people it acts on behalf of.",
   },
   {
     number: "03",
-    title: "Policymakers",
-    headline: "Experimental evidence for governance frameworks.",
-    body: "AI governance often arrives years after the technology. We translate experimental findings into deployment-readiness benchmarks and design rules, giving regulators and standard-setters a vocabulary grounded in what agents actually do — not what they say they would do.",
+    title: "Platforms",
+    headline: "Governance levers for agent-mediated systems.",
+    body: "If your product routes work between agents, settles trades, allocates budgets, or moderates a marketplace, the structural choices around the workers matter more than the workers themselves. We identify the levers — visibility, accountability horizon, consequence regime, memory — that reduce collective-action failure in your specific setting.",
   },
   {
     number: "04",
-    title: "Researchers",
-    headline: "Open benchmarks, simulators, and formal models.",
-    body: "Multi-agent AI behavior is a young science. We publish the environments, the data, and the formal structure behind our results so the field can replicate, extend, and disagree. Reach out if you want to collaborate on a benchmark, a paper, or a shared simulator.",
+    title: "Policymakers",
+    headline: "Evidence-based frameworks for accountability and oversight.",
+    body: "AI governance often arrives years after the technology. We translate experimental findings into deployment-readiness benchmarks and design rules — accountability, oversight, and stakeholder protection in AI labor systems — giving regulators and standard-setters a vocabulary grounded in what AI workforces actually do.",
   },
   {
     number: "05",
-    title: "Society",
-    headline: "Make invisible structural risks visible.",
-    body: "The largest risks from multi-agent AI will not announce themselves. They will look like ordinary economic activity: prices that drift, recommendations that narrow, services that quietly defect. Our job is to surface those risks while they are still cheap to fix — before they harden into infrastructure.",
+    title: "Researchers",
+    headline: "Open benchmarks, simulators, and formal models.",
+    body: "AI workforce behavior is a young science. We publish the environments, the data, and the formal structure behind our results so the field can replicate, extend, and disagree. Reach out if you want to collaborate on a benchmark, a paper, or a shared simulator.",
   },
 ];
 
@@ -53,19 +53,21 @@ export default function WhoWeServePage() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-8">
-          The missing layer between <span className="gradient-text">capability and governance</span>
+          The missing layer between AI{" "}
+          <span className="gradient-text">capability and governance</span>
         </h1>
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            Most AI evaluation asks whether a model is helpful, harmless, honest,
-            capable, or aligned in a single interaction. ReignDragon asks what
-            happens when many capable agents pursue local objectives in a shared
-            world.
+            Most AI evaluation asks whether a model is helpful, harmless,
+            honest, capable, or aligned in a single interaction. ReignDragon
+            asks what happens when AI workers operate together inside real
+            institutions &mdash; companies, markets, governments, and
+            platforms.
           </p>
           <p>
-            Different stakeholders need different parts of that answer. Here is
-            how we work with each.
+            Different stakeholders need different parts of that answer. Here
+            is how we work with each.
           </p>
         </div>
       </section>
@@ -108,25 +110,27 @@ export default function WhoWeServePage() {
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-          Multi-Agent AI Governance Science
+          AI Workforce Governance Science
         </h2>
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            ReignDragon is creating the empirical and theoretical foundation for
-            a new category: the study of how artificial agents behave in
-            populations, and how institutions can shape those populations toward
-            cooperation, welfare, and resilience.
+            ReignDragon is creating the empirical and theoretical foundation
+            for a new category: the study of how AI workers behave in
+            organizations, markets, and institutions &mdash; and how system
+            design can make those workforces cooperative, accountable, and
+            safe.
           </p>
           <p>
-            The category sits between AI safety, mechanism design, behavioral
-            economics, policy research, agent evaluation, and institutional
-            design. None of those fields, on its own, can answer what happens
-            when many capable agents share a world.
+            The category sits between AI safety, labor economics,
+            organizational behavior, mechanism design, behavioral psychology,
+            public policy, frontier-model evaluation, and institutional
+            governance. None of those fields, on its own, can answer what
+            happens when AI workers share an institution.
           </p>
           <p className="text-foreground font-medium">
-            It is not enough to build better agents. We must build better worlds
-            for agents to inhabit.
+            The future of AI is not a single assistant. It is a workforce. And
+            every workforce needs institutions.
           </p>
         </div>
       </section>
@@ -138,8 +142,8 @@ export default function WhoWeServePage() {
             Partner with us
           </p>
           <p className="text-lg text-text-secondary max-w-lg mx-auto mb-6">
-            If your work touches multi-agent AI in any of these ways, we would
-            like to hear from you.
+            If your work touches the AI workforce in any of these ways, we
+            would like to hear from you.
           </p>
           <p className="text-accent font-medium mb-6">hello@reigndragon.com</p>
           <Link

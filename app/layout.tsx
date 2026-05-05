@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | ReignDragon",
   },
   description:
-    "AI governance and policy-as-product research lab. Interdisciplinary research across AI, economics, psychology, policy, and applied math.",
+    "The empirical safety lab for the AI workforce. We build the science, benchmarks, and governance levers for fleets of AI workers operating inside companies, markets, governments, and platforms.",
 };
 
 export default function RootLayout({
