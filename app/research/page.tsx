@@ -114,7 +114,7 @@ export default function ResearchPage() {
             </p>
           </div>
 
-          <div className="relative aspect-square w-full max-w-[440px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-border bg-surface/30">
+          <div className="relative aspect-square w-full max-w-[440px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-border bg-[#fdf8ec]">
             <Image
               src="/images/research-hero.png"
               alt="Research"

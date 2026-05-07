@@ -61,7 +61,7 @@ export default function WhoWeServePage() {
           <p>
             Most AI evaluation asks whether a model is helpful, harmless,
             honest, capable, or aligned in a single interaction. ReignDragon
-            asks what happens when AI workers operate together inside real
+            Lab asks what happens when AI workers operate together inside real
             institutions &mdash; companies, markets, governments, and
             platforms.
           </p>
