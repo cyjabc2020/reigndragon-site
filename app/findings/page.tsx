@@ -1,55 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { findings, findingPortrait } from "./findings-data";
 
 export const metadata: Metadata = {
   title: "Findings",
   description:
-    "Empirical results from the lab — collective harm from sensible AI workers, trust scarring, prospect-theory behavior from environment structure, and the absence of a safe default for AI workforce governance.",
+    "Empirical results from ReignDragon Lab — collective harm from sensible agents, trust scarring, prospect-theory behavior from environment structure, and the absence of a safe default for AI workforce governance.",
 };
-
-const findings = [
-  {
-    number: "01",
-    tag: "Creeping Trap",
-    headline:
-      "AI workers can be individually sensible and collectively harmful.",
-    body: [
-      "We placed frontier LLM agents in a shared-risk commons and let them play repeatedly. Across the main confirmatory study, 396 of 400 episodes were welfare-negative — even though individual behavior sat near a local best-response region.",
-      "The striking result was not that they behaved randomly or irrationally. It was worse: their behavior sat near local best response while producing population-level welfare failure. Each worker was reacting reasonably to the world it saw. The aggregate was a slow-motion collapse.",
-      "The lever: visibility, accountability horizon, and consequence design at the workforce level — not better individual reasoning.",
-    ],
-  },
-  {
-    number: "02",
-    tag: "Trust Under Fire",
-    headline: "AI workers can carry trust scars.",
-    body: [
-      "In a repeated coordination game, a single early partner failure created persistent distrust. Even after the partner became reliable for many subsequent games, agents continued to verify and exclude the formerly unreliable partner at elevated rates.",
-      "Higher reasoning effort improved coordination on average, but it did not erase the scar. A single organizational failure became institutional memory — once trust was damaged, no amount of subsequent good behavior fully restored it within the experimental horizon.",
-      "The lever: how memory is structured, how reputations are surfaced, what counts as evidence of repaired trust, and how organizational handoffs reset the slate.",
-    ],
-  },
-  {
-    number: "03",
-    tag: "Prospect Theory from Bellman Optimality",
-    headline: "AI workers respond to structure, not just prompts.",
-    body: [
-      "We studied risk-neutral agents in MDPs containing absorbing catastrophic states. The optimal policies produced prospect-theory-like behavior: S-shaped value functions, endogenous loss sensitivity, and reflection-effect policy reversals.",
-      "What appears to be a model behavior may actually be an institutional effect. Risk patterns that look like psychological bias — risk aversion in gains, risk-seeking in losses — can emerge from optimal control near irreversible failure. The worker is not flawed; the environment makes the pattern rational.",
-      "The lever: design the institution, not just the worker. The presence of catastrophic absorbing states changes everything downstream.",
-    ],
-  },
-  {
-    number: "04",
-    tag: "No Safe Default",
-    headline: "There is no safe default for AI workforce governance.",
-    body: [
-      "We tested five consequence regimes — proportional, progressive, all-or-nothing, regressive, and a baseline — in a crisis-fund game. Different regimes produced radically different cooperation outcomes. Progressive punishment performed best on average.",
-      "But every governance rule contained death-trap configurations where outcomes collapsed catastrophically. The worst regimes failed across large parts of the design space, not just edge cases.",
-      "The conclusion is simple: how you structure accountability determines how the AI workforce behaves. Governance is not a wrapper around workers. It is part of the system. Choosing a regime without mapping its failure modes is choosing a failure mode.",
-    ],
-  },
-];
 
 export default function FindingsPage() {
   return (
@@ -74,7 +32,7 @@ export default function FindingsPage() {
             harm them.
           </p>
           <p>
-            They share a pattern. The workers are not broken. The institutions
+            They share a pattern. The agents are not broken. The institutions
             around them are. Capability is rarely the bottleneck; environment,
             horizon, memory, stakeholder visibility, and consequence design
             almost always are.
@@ -82,15 +40,46 @@ export default function FindingsPage() {
         </div>
       </section>
 
+      {/* Series portrait row — same dragon, four moods */}
+      <section className="mx-auto max-w-4xl px-6 pb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          {findings.map((finding) => (
+            <Link
+              key={finding.slug}
+              href={`/findings/${finding.slug}`}
+              className="group block"
+              aria-label={finding.tag}
+            >
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-border bg-[#fdf8ec] group-hover:border-accent/40 transition-colors">
+                <Image
+                  src={findingPortrait(finding.slug)}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] text-text-tertiary group-hover:text-accent transition-colors text-center">
+                {finding.tag}
+              </p>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm text-text-tertiary italic">
+          Four findings, one dragon.
+        </p>
+      </section>
+
       <div className="glow-line mx-6" />
 
       {/* Findings */}
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <div className="space-y-12">
+        <div className="space-y-8">
           {findings.map((finding) => (
-            <article
-              key={finding.number}
-              className="rounded-xl border border-border bg-surface/50 p-8 sm:p-10"
+            <Link
+              key={finding.slug}
+              href={`/findings/${finding.slug}`}
+              className="group block rounded-xl border border-border bg-surface/50 hover:bg-surface-hover hover:border-accent/30 transition-all p-8 sm:p-10"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="font-mono text-sm text-accent">
@@ -100,15 +89,32 @@ export default function FindingsPage() {
                   {finding.tag}
                 </span>
               </div>
-              <h2 className="text-2xl font-semibold text-foreground mb-5 leading-snug">
+              <h2 className="text-2xl font-semibold text-foreground mb-4 leading-snug group-hover:text-accent transition-colors">
                 {finding.headline}
               </h2>
-              <div className="space-y-4 text-text-secondary leading-relaxed">
-                {finding.body.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-            </article>
+              <p className="text-text-secondary leading-relaxed mb-5">
+                {finding.cardBody}
+              </p>
+              <p className="text-foreground/80 italic leading-relaxed mb-5 border-l-2 border-accent/30 pl-4">
+                {finding.question}
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-accent">
+                Read the paper
+                <svg
+                  className="ml-2 h-4 w-4 transform group-hover:translate-x-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </Link>
           ))}
         </div>
       </section>
@@ -126,14 +132,14 @@ export default function FindingsPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            The same AI worker can cooperate or defect depending on the
+            The same AI agent can cooperate or defect depending on the
             institution it inhabits. The same model can be safe in isolation
             and dangerous in a workforce. The same governance rule can look
             reasonable in policy language and fail catastrophically in
             deployment.
           </p>
           <p>
-            A worker can pass every individual benchmark and still fail as part
+            An agent can pass every individual benchmark and still fail as part
             of a workforce.
           </p>
           <p className="text-foreground font-medium">

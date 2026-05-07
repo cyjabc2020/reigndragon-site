@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Vision",
   description:
-    "Build the institutional science of the AI workforce. ReignDragon studies how AI workers behave inside companies, markets, and institutions — and turns that evidence into governance that works.",
+    "Build the institutional science of the AI workforce. ReignDragon Lab studies how AI workers behave inside companies, markets, and institutions — and turns that evidence into governance that works.",
 };
 
 export default function VisionPage() {
@@ -65,7 +65,7 @@ export default function VisionPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed">
           <p>
-            ReignDragon studies how AI workers actually behave &mdash; in
+            ReignDragon Lab studies how AI workers actually behave &mdash; in
             organizations, markets, crisis rooms, commons, and governance
             environments &mdash; and translates that evidence into design
             rules for the people deploying them.

@@ -1,13 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSparkles from "./components/HeroSparkles";
+import { findings, findingHero } from "./findings/findings-data";
 
 export default function Home() {
   return (
     <div className="bg-grid">
       {/* Hero Section — full-bleed background image with drifting sparkles */}
       <section className="relative isolate overflow-hidden min-h-[85vh] flex items-center">
-        {/* Background image */}
+        {/* Background image — watercolor on cream paper. The dragon sits on
+            the right; the left two-thirds is generous cream negative space
+            for copy. We use multiply-blend overlays below to darken the
+            cream into the page bg so the image dissolves into the dark UI
+            cohesively while keeping the dragon legible on the right. */}
         <Image
           src="/images/hero.png"
           alt=""
@@ -16,26 +21,25 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-[78%_center] md:object-[90%_center] -z-20"
         />
-        {/* Readability scrim — mobile: heavier full-width darkening because
-            the copy spans the entire viewport over the brightest part of the
-            artwork. */}
+        {/* Mobile scrim — heavier left darken because copy spans wider */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10 md:hidden"
           style={{
             background:
-              "linear-gradient(to right, rgba(8,10,16,0.85) 0%, rgba(8,10,16,0.7) 60%, rgba(8,10,16,0.55) 100%), linear-gradient(to bottom, rgba(8,10,16,0.55) 0%, rgba(8,10,16,0.25) 25%, rgba(8,10,16,0.25) 70%, rgba(8,10,16,0.8) 100%)",
+              "linear-gradient(to right, rgba(8,10,16,0.92) 0%, rgba(8,10,16,0.85) 50%, rgba(8,10,16,0.55) 80%, rgba(8,10,16,0.35) 100%), linear-gradient(to bottom, rgba(8,10,16,0.5) 0%, rgba(8,10,16,0.2) 25%, rgba(8,10,16,0.2) 70%, rgba(8,10,16,0.85) 100%)",
           }}
         />
-        {/* Readability scrim — desktop: subtle left fade backs the copy
-            without hiding the artwork; light top/bottom darkening for nav
-            and section transition. */}
+        {/* Desktop scrim — strong left vignette behind copy column, fading
+            the cream paper into the page bg toward the right edge so the
+            image ends cleanly. Keep the dragon zone (~70-95%) lightly
+            covered so it remains the visual focus. */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10 hidden md:block"
           style={{
             background:
-              "linear-gradient(to right, rgba(8,10,16,0.7) 0%, rgba(8,10,16,0.35) 35%, rgba(8,10,16,0) 60%, rgba(8,10,16,0) 100%), linear-gradient(to bottom, rgba(8,10,16,0.45) 0%, rgba(8,10,16,0) 20%, rgba(8,10,16,0) 75%, rgba(8,10,16,0.7) 100%)",
+              "linear-gradient(to right, rgba(8,10,16,0.88) 0%, rgba(8,10,16,0.75) 30%, rgba(8,10,16,0.45) 55%, rgba(8,10,16,0.1) 75%, rgba(8,10,16,0.4) 100%), linear-gradient(to bottom, rgba(8,10,16,0.35) 0%, rgba(8,10,16,0) 18%, rgba(8,10,16,0) 78%, rgba(8,10,16,0.85) 100%)",
           }}
         />
         {/* Sparkles canvas */}
@@ -56,13 +60,14 @@ export default function Home() {
             </h1>
 
             <p className="max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-tight text-foreground mb-6">
-              The empirical safety lab for the{" "}
-              <span className="gradient-text">AI workforce</span>.
+              ReignDragon Lab studies how{" "}
+              <span className="gradient-text">intelligent agents fail together</span>.
             </p>
             <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-10">
-              AI is becoming labor. ReignDragon builds the science, benchmarks,
-              and governance levers for fleets of AI workers operating inside
-              companies, markets, governments, and platforms.
+              As AI becomes agentic, the central safety question is no longer
+              whether one model is capable, truthful, or aligned. It is whether
+              many intelligent agents can cooperate, recover from failure, and
+              make decisions under irreversible consequences.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -220,7 +225,7 @@ export default function Home() {
               key={pillar.label}
               className="group relative rounded-xl border border-border bg-surface/50 overflow-hidden flex flex-col"
             >
-              <div className="relative aspect-[4/3] w-full bg-surface/30">
+              <div className="relative aspect-[4/3] w-full bg-[#fdf8ec]">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -258,7 +263,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-xl border border-border bg-surface/50 overflow-hidden">
-            <div className="relative aspect-[16/9] w-full bg-surface/30">
+            <div className="relative aspect-[16/9] w-full bg-[#fdf8ec]">
               <Image
                 src="/images/why-it-matters.png"
                 alt="Most AI work studies the worker. We study the workforce."
@@ -333,47 +338,42 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              tag: "Creeping Trap",
-              headline:
-                "AI workers can be individually sensible and collectively harmful.",
-              body:
-                "Frontier LLM agents repeatedly over-extracted from a shared-risk commons. The striking result was not that they behaved randomly or irrationally. It was worse: their behavior sat near local best response while producing population-level welfare failure.",
-            },
-            {
-              tag: "Trust Under Fire",
-              headline: "AI workers can carry trust scars.",
-              body:
-                "One early failure by a partner produced persistent distrust. Even after the partner became reliable, agents continued to verify and exclude it at elevated rates. A single organizational failure can become institutional memory.",
-            },
-            {
-              tag: "Prospect Theory from Bellman",
-              headline: "AI workers respond to structure, not just prompts.",
-              body:
-                "Risk patterns that look like psychological bias emerged from the structure of the environment itself. What appears to be a model behavior may actually be an institutional effect — optimal control near irreversible failure produces what looks like loss aversion.",
-            },
-            {
-              tag: "No Safe Default",
-              headline: "There is no safe default for AI workforce governance.",
-              body:
-                "Different consequence regimes produced radically different cooperation outcomes. Every governance rule contained death-trap configurations. The conclusion is simple: how you structure accountability determines how the AI workforce behaves.",
-            },
-          ].map((finding) => (
-            <div
-              key={finding.tag}
-              className="rounded-xl border border-border bg-surface/50 p-8"
+          {findings.map((finding) => (
+            <Link
+              key={finding.slug}
+              href={`/findings/${finding.slug}`}
+              className="group rounded-xl border border-border bg-surface/50 hover:bg-surface-hover hover:border-accent/30 transition-all overflow-hidden flex flex-col"
             >
-              <span className="font-mono text-xs text-accent mb-4 block uppercase tracking-[0.15em]">
-                {finding.tag}
-              </span>
-              <h3 className="text-lg font-semibold text-foreground mb-3 leading-snug">
-                {finding.headline}
-              </h3>
-              <p className="text-sm leading-relaxed text-text-secondary">
-                {finding.body}
-              </p>
-            </div>
+              <div className="relative aspect-[16/9] w-full bg-[#fdf8ec]">
+                <Image
+                  src={findingHero(finding.slug)}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-1">
+                <span className="font-mono text-xs text-accent mb-4 block uppercase tracking-[0.15em]">
+                  {finding.tag}
+                </span>
+                <h3 className="text-lg font-semibold text-foreground mb-3 leading-snug group-hover:text-accent transition-colors">
+                  {finding.headline}
+                </h3>
+                <p className="text-sm leading-relaxed text-text-secondary mb-5">
+                  {finding.cardBody}
+                </p>
+                <p className="mt-auto pt-5 border-t border-border/60 text-sm leading-relaxed text-foreground/80 italic">
+                  {finding.question}
+                </p>
+                <span className="mt-5 inline-flex items-center text-xs font-medium text-accent">
+                  Read the paper
+                  <svg className="ml-1.5 h-3.5 w-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 
@@ -401,7 +401,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="relative aspect-[16/9] w-full mb-10 rounded-xl overflow-hidden border border-border bg-surface/30">
+        <div className="relative aspect-[16/9] w-full mb-10 rounded-xl overflow-hidden border border-border bg-[#fdf8ec]">
           <Image
             src="/images/our-story.png"
             alt="Our story"
