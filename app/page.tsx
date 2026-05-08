@@ -47,21 +47,13 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-6xl w-full px-6 py-24 sm:py-32">
           <div className="max-w-3xl">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="h-px w-8 bg-accent/40" />
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                ReignDragon
-              </span>
-            </div>
-
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.03em] text-foreground mb-8">
-              Reign the{" "}
-              <span className="gradient-text">dragon</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.03em] text-foreground mb-6">
+              <span className="gradient-text">ReignDragon Lab</span>
             </h1>
 
             <p className="max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-tight text-foreground mb-6">
-              ReignDragon Lab studies how{" "}
-              <span className="gradient-text">intelligent agents fail together</span>.
+              We design policies and mechanisms to prevent intelligent agents
+              from failing together.
             </p>
             <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-10">
               As AI becomes agentic, the central safety question is no longer

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | ReignDragon Lab",
   },
   description:
-    "ReignDragon Lab studies how intelligent agents fail together. We build the science, benchmarks, and governance levers for AI workforces operating inside companies, markets, governments, and platforms.",
+    "ReignDragon Lab designs policies and mechanisms to prevent intelligent agents from failing together. We build the science, benchmarks, and governance levers for AI workforces operating inside companies, markets, governments, and platforms.",
 };
 
 export default function RootLayout({

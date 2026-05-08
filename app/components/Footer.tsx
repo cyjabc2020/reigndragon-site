@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-semibold text-foreground text-sm">ReignDragon Lab</span>
             </div>
             <p className="text-text-tertiary text-sm leading-relaxed">
-              We study how intelligent agents fail together.
+              We design policies and mechanisms to prevent intelligent agents from failing together.
             </p>
           </div>
 
