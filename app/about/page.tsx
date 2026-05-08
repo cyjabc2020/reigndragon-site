@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About ReignDragon Lab — we study how intelligent agents fail together. We study how AI workers behave inside companies, markets, and institutions, and turn that evidence into governance that works.",
+    "About ReignDragon Lab — we design policies and mechanisms to prevent intelligent agents from failing together. We study how AI workers behave inside companies, markets, and institutions, and turn that evidence into governance that works.",
 };
 
 export default function AboutPage() {
@@ -23,10 +23,11 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            ReignDragon Lab studies how intelligent agents fail together. We
-            run controlled multi-agent experiments and formal models inside
-            companies, markets, governments, and platforms &mdash; and
-            translate that evidence into governance that works.
+            ReignDragon Lab designs policies and mechanisms to prevent
+            intelligent agents from failing together. We run controlled
+            multi-agent experiments and formal models inside companies,
+            markets, governments, and platforms &mdash; and translate that
+            evidence into governance that works.
           </p>
           <p>
             We were founded on a conviction: AI is becoming labor, and the
