@@ -145,7 +145,7 @@ export default function WhoWeServePage() {
             If your work touches the AI workforce in any of these ways, we
             would like to hear from you.
           </p>
-          <p className="text-accent font-medium mb-6">hello@reigndragon.com</p>
+          <p className="text-accent font-medium mb-6">hello@reigndragon.ai</p>
           <Link
             href="/findings"
             className="inline-flex h-11 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"

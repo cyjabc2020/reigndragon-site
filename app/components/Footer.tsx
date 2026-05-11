@@ -49,7 +49,7 @@ export default function Footer() {
               Connect
             </h4>
             <div className="flex flex-col gap-2">
-              <span className="text-sm text-text-secondary">hello@reigndragon.com</span>
+              <span className="text-sm text-text-secondary">hello@reigndragon.ai</span>
             </div>
           </div>
         </div>
