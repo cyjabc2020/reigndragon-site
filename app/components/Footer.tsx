@@ -28,6 +28,7 @@ export default function Footer() {
                 { href: "/vision", label: "Vision" },
                 { href: "/research", label: "Research" },
                 { href: "/findings", label: "Findings" },
+                { href: "/events", label: "Events" },
                 { href: "/who-we-serve", label: "Who We Serve" },
                 { href: "/about", label: "About" },
               ].map((link) => (
