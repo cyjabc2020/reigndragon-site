@@ -140,7 +140,7 @@ export default function EventsPage() {
           <div className="rounded-xl border border-border bg-surface/30 p-8 text-center">
             <p className="text-text-secondary">
               No upcoming events scheduled. Reach out at{" "}
-              <span className="text-accent">hello@reigndragon.com</span> if
+              <span className="text-accent">hello@reigndragon.ai</span> if
               you&apos;d like to host or collaborate on one.
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function EventsPage() {
           <p className="text-lg text-text-secondary max-w-lg mx-auto mb-6">
             Want to co-host a roundtable, run a workshop, or have us speak?
           </p>
-          <p className="text-accent font-medium">hello@reigndragon.com</p>
+          <p className="text-accent font-medium">hello@reigndragon.ai</p>
         </div>
       </section>
     </div>

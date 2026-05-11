@@ -300,7 +300,7 @@ export default function ResearchPage() {
           <p className="text-lg text-text-secondary max-w-lg mx-auto">
             Interested in our research or want to collaborate on AI workforce
             governance? Reach out at{" "}
-            <span className="text-accent">hello@reigndragon.com</span>
+            <span className="text-accent">hello@reigndragon.ai</span>
           </p>
         </div>
       </section>

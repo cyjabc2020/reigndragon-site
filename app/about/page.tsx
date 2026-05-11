@@ -148,7 +148,7 @@ export default function AboutPage() {
             frameworks for the AI workforce, or explore how our work applies to
             your domain &mdash; we&apos;re always interested in connecting.
           </p>
-          <p className="text-accent font-medium">hello@reigndragon.com</p>
+          <p className="text-accent font-medium">hello@reigndragon.ai</p>
         </div>
       </section>
     </div>
