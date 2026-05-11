@@ -2,8 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroSparkles from "./components/HeroSparkles";
 import { findings, findingHero } from "./findings/findings-data";
+import { partitionEvents } from "./events/events-data";
+
+// Re-render on each request so the upcoming-event teaser stays current.
+export const dynamic = "force-dynamic";
 
 export default function Home() {
+  const { upcoming } = partitionEvents();
+  const nextEvent = upcoming[0];
+
   return (
     <div className="bg-grid">
       {/* Hero Section — full-bleed background image with drifting sparkles */}
@@ -477,6 +484,70 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {nextEvent && (
+        <>
+          <div className="glow-line mx-6" />
+
+          {/* Upcoming event teaser — visible on the homepage so the next
+              live thing surfaces above the signal close. */}
+          <section className="mx-auto max-w-3xl px-6 py-14">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="h-px w-8 bg-accent/40" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+                Upcoming
+              </span>
+            </div>
+
+            <Link
+              href="/events"
+              className="group block rounded-xl border border-border bg-surface/50 hover:bg-surface-hover hover:border-accent/30 transition-all p-6 sm:p-8"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span className="font-mono text-xs uppercase tracking-[0.15em] text-accent">
+                  {nextEvent.kind}
+                </span>
+                {nextEvent.badge && (
+                  <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+                    {nextEvent.badge}
+                  </span>
+                )}
+              </div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug mb-3 group-hover:text-accent transition-colors">
+                {nextEvent.title}
+              </h3>
+              <p className="text-sm text-foreground/80 mb-1">
+                <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
+                  When
+                </span>
+                {nextEvent.dateDisplay}
+              </p>
+              <p className="text-sm text-foreground/80 mb-5">
+                <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
+                  Where
+                </span>
+                {nextEvent.location}
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-accent">
+                See event
+                <svg
+                  className="ml-2 h-4 w-4 transform group-hover:translate-x-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </section>
+        </>
+      )}
 
       <div className="glow-line mx-6" />
 
