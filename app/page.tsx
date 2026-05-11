@@ -501,49 +501,73 @@ export default function Home() {
 
             <Link
               href="/events"
-              className="group block rounded-xl border border-border bg-surface/50 hover:bg-surface-hover hover:border-accent/30 transition-all p-6 sm:p-8"
+              className="group block rounded-xl border border-border bg-surface/50 hover:bg-surface-hover hover:border-accent/30 transition-all overflow-hidden"
             >
-              <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className="font-mono text-xs uppercase tracking-[0.15em] text-accent">
-                  {nextEvent.kind}
-                </span>
-                {nextEvent.badge && (
-                  <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
-                    {nextEvent.badge}
-                  </span>
+              <div
+                className={
+                  nextEvent.coverImage
+                    ? "grid grid-cols-1 sm:grid-cols-[160px_1fr]"
+                    : ""
+                }
+              >
+                {nextEvent.coverImage && (
+                  <div className="relative aspect-square w-full bg-[#fdf8ec] sm:border-r border-border/60">
+                    <Image
+                      src={nextEvent.coverImage}
+                      alt={
+                        nextEvent.coverImageAlt ??
+                        `${nextEvent.title} cover image`
+                      }
+                      fill
+                      sizes="(max-width: 640px) 100vw, 160px"
+                      className="object-cover"
+                    />
+                  </div>
                 )}
+                <div className="p-6 sm:p-8">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <span className="font-mono text-xs uppercase tracking-[0.15em] text-accent">
+                      {nextEvent.kind}
+                    </span>
+                    {nextEvent.badge && (
+                      <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+                        {nextEvent.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug mb-3 group-hover:text-accent transition-colors">
+                    {nextEvent.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80 mb-1">
+                    <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
+                      When
+                    </span>
+                    {nextEvent.dateDisplay}
+                  </p>
+                  <p className="text-sm text-foreground/80 mb-5">
+                    <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
+                      Where
+                    </span>
+                    {nextEvent.location}
+                  </p>
+                  <span className="inline-flex items-center text-sm font-medium text-accent">
+                    See event
+                    <svg
+                      className="ml-2 h-4 w-4 transform group-hover:translate-x-0.5 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug mb-3 group-hover:text-accent transition-colors">
-                {nextEvent.title}
-              </h3>
-              <p className="text-sm text-foreground/80 mb-1">
-                <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
-                  When
-                </span>
-                {nextEvent.dateDisplay}
-              </p>
-              <p className="text-sm text-foreground/80 mb-5">
-                <span className="font-mono uppercase tracking-[0.15em] text-text-tertiary mr-2">
-                  Where
-                </span>
-                {nextEvent.location}
-              </p>
-              <span className="inline-flex items-center text-sm font-medium text-accent">
-                See event
-                <svg
-                  className="ml-2 h-4 w-4 transform group-hover:translate-x-0.5 transition-transform"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
             </Link>
           </section>
         </>

@@ -13,6 +13,11 @@ export type Event = {
   rsvpLabel?: string; // defaults to "RSVP"
   // Optional badge for context, e.g. "BOSTechWeek"
   badge?: string;
+  // Optional cover image (event flyer / hero from the external host).
+  // Can be a remote URL (must be allow-listed in next.config.ts) or a
+  // local path under public/.
+  coverImage?: string;
+  coverImageAlt?: string;
 };
 
 export const events: Event[] = [
@@ -23,12 +28,16 @@ export const events: Event[] = [
     kind: "Research roundtable",
     date: "2026-05-29T14:00:00Z", // 10:00 AM ET = 14:00 UTC
     dateDisplay: "Friday, May 29 · 10:00 AM ET",
-    location: "Location TBA",
+    location: "Cambridge, MA",
     description:
       "A research roundtable examining governance challenges as AI agents transition into organizational roles — how multi-agent systems behave inside companies, markets, platforms, and governance environments, and what accountability and institutional safety mechanisms might look like in practice.",
     rsvpUrl: "https://partiful.com/e/obw9iWg6PPHrxoHVe6cj",
     rsvpLabel: "RSVP on Partiful",
     badge: "#BOSTechWeek",
+    coverImage:
+      "https://partiful.imgix.net/external/user/JdWfVxAO64YY9Bn8KiQE91ClHN62/joVCVDFLkGSIgWmZzDiHp?w=1200&h=1200&fit=clip",
+    coverImageAlt:
+      "Partiful cover image for Governing the AI Workforce roundtable",
   },
 ];
 
