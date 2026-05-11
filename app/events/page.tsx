@@ -12,94 +12,84 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 function EventCard({ event, past }: { event: Event; past?: boolean }) {
-  const hasImage = !!event.coverImage;
   return (
     <article
-      className={`rounded-xl border bg-surface/50 transition-all overflow-hidden ${
+      className={`rounded-xl border bg-surface/50 transition-all p-6 sm:p-10 ${
         past
           ? "border-border/60 opacity-80"
           : "border-border hover:bg-surface-hover hover:border-accent/30"
       }`}
     >
-      <div
-        className={
-          hasImage
-            ? "grid grid-cols-1 sm:grid-cols-[220px_1fr]"
-            : ""
-        }
-      >
-        {hasImage && (
-          <div className="relative aspect-square w-full bg-[#fdf8ec] sm:border-r border-border/60">
-            <Image
-              src={event.coverImage!}
-              alt={event.coverImageAlt ?? `${event.title} cover image`}
-              fill
-              sizes="(max-width: 640px) 100vw, 220px"
-              className="object-cover"
-            />
-          </div>
-        )}
-        <div className="p-8 sm:p-10">
-          <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span className="font-mono text-xs uppercase tracking-[0.15em] text-accent">
-              {event.kind}
-            </span>
-            {event.badge && (
-              <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
-                {event.badge}
-              </span>
-            )}
-            {past && (
-              <span className="inline-flex items-center rounded-full bg-text-tertiary/10 px-2.5 py-0.5 text-xs font-medium text-text-tertiary">
-                Past
-              </span>
-            )}
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground leading-snug mb-4 tracking-tight">
-            {event.title}
-          </h2>
-
-          <dl className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-2 gap-x-4 mb-6 text-sm">
-            <dt className="font-mono uppercase tracking-[0.15em] text-text-tertiary">
-              When
-            </dt>
-            <dd className="text-foreground/90">{event.dateDisplay}</dd>
-            <dt className="font-mono uppercase tracking-[0.15em] text-text-tertiary">
-              Where
-            </dt>
-            <dd className="text-foreground/90">{event.location}</dd>
-          </dl>
-
-          <p className="text-text-secondary leading-relaxed mb-6">
-            {event.description}
-          </p>
-
-          {!past && (
-            <a
-              href={event.rsvpUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-5 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
-            >
-              {event.rsvpLabel ?? "RSVP"}
-              <svg
-                className="ml-2 h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
-          )}
+      {event.coverImage && (
+        <div className="relative mx-auto mb-8 aspect-square w-full max-w-[280px] overflow-hidden rounded-lg bg-[#fdf8ec] border border-border/60">
+          <Image
+            src={event.coverImage}
+            alt={event.coverImageAlt ?? `${event.title} cover image`}
+            fill
+            sizes="(max-width: 640px) 100vw, 280px"
+            className="object-cover"
+          />
         </div>
+      )}
+
+      <div className="flex flex-wrap items-center gap-3 mb-5">
+        <span className="font-mono text-xs uppercase tracking-[0.15em] text-accent">
+          {event.kind}
+        </span>
+        {event.badge && (
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+            {event.badge}
+          </span>
+        )}
+        {past && (
+          <span className="inline-flex items-center rounded-full bg-text-tertiary/10 px-2.5 py-0.5 text-xs font-medium text-text-tertiary">
+            Past
+          </span>
+        )}
       </div>
+
+      <h2 className="text-2xl sm:text-3xl font-semibold text-foreground leading-snug mb-5 tracking-tight">
+        {event.title}
+      </h2>
+
+      <dl className="grid grid-cols-[80px_1fr] sm:grid-cols-[120px_1fr] gap-y-2 gap-x-4 mb-6 text-sm">
+        <dt className="font-mono uppercase tracking-[0.15em] text-text-tertiary">
+          When
+        </dt>
+        <dd className="text-foreground/90">{event.dateDisplay}</dd>
+        <dt className="font-mono uppercase tracking-[0.15em] text-text-tertiary">
+          Where
+        </dt>
+        <dd className="text-foreground/90">{event.location}</dd>
+      </dl>
+
+      <p className="text-text-secondary leading-relaxed mb-6">
+        {event.description}
+      </p>
+
+      {!past && (
+        <a
+          href={event.rsvpUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-5 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+        >
+          {event.rsvpLabel ?? "RSVP"}
+          <svg
+            className="ml-2 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </a>
+      )}
     </article>
   );
 }
