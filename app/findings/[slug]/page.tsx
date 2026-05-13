@@ -171,6 +171,42 @@ export default async function FindingPage({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {finding.demoSlug ? (
+            <Link
+              href={`/demos/${finding.demoSlug}`}
+              className="group rounded-lg border border-accent/30 bg-accent/[0.04] hover:bg-accent/[0.08] hover:border-accent/50 transition-all px-4 py-3 flex items-center justify-between text-sm"
+            >
+              <span className="text-foreground font-medium">
+                Try the demo
+              </span>
+              <span className="inline-flex items-center font-mono text-xs uppercase tracking-[0.15em] text-accent">
+                Live
+                <svg
+                  className="ml-2 h-3.5 w-3.5 transform group-hover:translate-x-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </Link>
+          ) : (
+            <div
+              className="rounded-lg border border-border bg-surface/30 px-4 py-3 flex items-center justify-between text-sm"
+              aria-disabled
+            >
+              <span className="text-text-secondary">Try the demo</span>
+              <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+                Coming soon
+              </span>
+            </div>
+          )}
           {[
             { label: "Read the paper" },
             { label: "Benchmark & code" },
