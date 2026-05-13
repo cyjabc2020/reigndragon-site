@@ -11,6 +11,9 @@ export type Finding = {
   abstract: string[];
   coreInsight: string;
   whyItMatters: string;
+  // Slug of the live demo under /demos/<demoSlug>. Optional — only set
+  // for findings that have a working interactive prototype.
+  demoSlug?: string;
 };
 
 // All four findings share their slug as the image filename.
@@ -47,6 +50,7 @@ export const findings: Finding[] = [
       "Multi-agent AI safety cannot be solved through agent alignment alone. Agents act inside institutions. Those institutions create incentives, vulnerabilities, and failure modes. If we do not stress-test governance rules, we may deploy systems where individually capable agents still produce collective catastrophe.",
     coreInsight:
       "There is no safe default. Accountability design is part of AI alignment.",
+    demoSlug: "no-safe-default",
   },
   {
     slug: "creeping-trap",
@@ -72,6 +76,7 @@ export const findings: Finding[] = [
     whyItMatters:
       "A multi-agent system can look successful by individual performance metrics while damaging the broader environment. If evaluations only measure whether each agent is doing well, they may miss whether the population is destroying the commons.",
     coreInsight: "Local coherence is not social safety.",
+    demoSlug: "creeping-trap",
   },
   {
     slug: "trust-under-fire",
