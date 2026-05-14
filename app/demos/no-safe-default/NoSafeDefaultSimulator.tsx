@@ -689,6 +689,14 @@ export default function NoSafeDefaultSimulator() {
           alignment is not enough — accountability design is part of AI
           alignment.
         </p>
+        <p className="mt-4 text-sm text-foreground leading-relaxed font-medium border-l-2 border-accent/40 pl-4">
+          This is not a ranking. The safest regime is
+          configuration-dependent — every regime, including the one that
+          looks best here, has wealth-and-threshold combinations where it
+          performs catastrophically worse than alternatives. The point is
+          not to crown a default rule, but to show why accountability
+          rules must be stress-tested.
+        </p>
       </section>
     </div>
   );

@@ -52,6 +52,24 @@ export default function NoSafeDefaultDemoPage() {
         </p>
       </section>
 
+      {/* Why this matters — plain-English framing for non-technical readers. */}
+      <section className="mx-auto max-w-4xl px-6 pb-8">
+        <div className="rounded-xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-3">
+            Why this matters
+          </p>
+          <p className="text-lg text-foreground leading-relaxed">
+            This demo shows why{" "}
+            <span className="font-medium">
+              there is no universally safe accountability rule
+            </span>
+            : the same agents can cooperate or collapse depending only on
+            the consequence regime. Agent capability is held constant.
+            Change the rule, change who survives.
+          </p>
+        </div>
+      </section>
+
       <NoSafeDefaultSimulator />
 
       <section className="mx-auto max-w-4xl px-6 pb-20">
@@ -59,7 +77,11 @@ export default function NoSafeDefaultDemoPage() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-4">
             Next
           </p>
-          <p className="text-lg text-text-secondary max-w-xl mx-auto mb-6">
+          <p className="text-lg text-text-secondary max-w-xl mx-auto mb-3">
+            Want a 15-minute walkthrough of what this means for agentic AI
+            deployment?
+          </p>
+          <p className="text-sm text-text-tertiary max-w-xl mx-auto mb-6">
             Multi-agent AI safety cannot be solved through agent alignment
             alone. ReignDragon Lab stress-tests consequence regimes and
             designs the accountability rules that turn safe behaviour into
@@ -70,7 +92,7 @@ export default function NoSafeDefaultDemoPage() {
               href="/who-we-serve"
               className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
             >
-              Request a briefing
+              Use this demo in a briefing
             </Link>
             <Link
               href="/findings/no-safe-default"
