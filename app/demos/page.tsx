@@ -60,6 +60,11 @@ export default function DemosPage() {
         </h1>
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
+          <p className="text-foreground font-medium">
+            Interactive prototypes from ReignDragon Lab showing how AI
+            workforces fail through institutional structure: accumulating
+            risk, invisible stakeholders, and consequence-regime design.
+          </p>
           <p>
             Each demo is a small, transparent prototype — rule-based, not a
             full LLM simulation — that lets you adjust the structural levers

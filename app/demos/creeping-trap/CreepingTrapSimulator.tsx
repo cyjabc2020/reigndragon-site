@@ -620,6 +620,13 @@ export default function CreepingTrapSimulator() {
             );
           })}
         </div>
+        <p className="mt-4 text-xs text-text-tertiary leading-snug max-w-2xl">
+          The empirical LLM mean is drawn from the paper&rsquo;s nine-model
+          panel (eight commercial frontier LLMs plus Llama-3-70B in the
+          robustness leg) across 990 episodes. Full model panel, prompts,
+          paraphrases, confidence intervals, and confirmatory episodes are
+          documented in the paper.
+        </p>
       </section>
 
       {/* Main lab grid */}

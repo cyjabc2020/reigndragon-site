@@ -58,6 +58,23 @@ export default function CreepingTrapDemoPage() {
         </p>
       </section>
 
+      {/* Why this matters — plain-English framing for non-technical readers. */}
+      <section className="mx-auto max-w-4xl px-6 pb-8">
+        <div className="rounded-xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-3">
+            Why this matters
+          </p>
+          <p className="text-lg text-foreground leading-relaxed">
+            This demo shows how{" "}
+            <span className="font-medium">individually reasonable</span> AI
+            workers can gradually create systemic harm when risk accumulates,
+            bystanders are invisible, and short-term extraction is locally
+            rewarded. Every decider is best-responding; the workforce still
+            drifts into welfare-negative outcomes.
+          </p>
+        </div>
+      </section>
+
       <CreepingTrapSimulator />
 
       {/* CTA */}
@@ -66,17 +83,20 @@ export default function CreepingTrapDemoPage() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-4">
             Next
           </p>
-          <p className="text-lg text-text-secondary max-w-xl mx-auto mb-6">
-            Want to test AI workforce failure modes in your own deployment
-            setting? ReignDragon Lab designs scoped simulations and governance
-            pilots for AI labs, enterprises, platforms, and funders.
+          <p className="text-lg text-text-secondary max-w-xl mx-auto mb-3">
+            Want a 15-minute walkthrough of what this means for agentic AI
+            deployment?
+          </p>
+          <p className="text-sm text-text-tertiary max-w-xl mx-auto mb-6">
+            ReignDragon Lab designs scoped simulations and governance pilots
+            for AI labs, enterprises, platforms, and funders.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/who-we-serve"
               className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-6 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
             >
-              Request a briefing
+              Use this demo in a briefing
             </Link>
             <Link
               href="/findings/creeping-trap"
