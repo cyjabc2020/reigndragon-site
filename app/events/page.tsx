@@ -67,29 +67,31 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
         {event.description}
       </p>
 
-      {!past && (
-        <a
-          href={event.rsvpUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-5 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+      <a
+        href={event.rsvpUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={
+          past
+            ? "inline-flex h-11 items-center justify-center rounded-lg border border-border bg-background/30 px-5 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
+            : "inline-flex h-11 items-center justify-center rounded-lg bg-accent/10 px-5 text-sm font-medium text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+        }
+      >
+        {past ? "Details" : (event.rsvpLabel ?? "RSVP")}
+        <svg
+          className="ml-2 h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          {event.rsvpLabel ?? "RSVP"}
-          <svg
-            className="ml-2 h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-        </a>
-      )}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+      </a>
     </article>
   );
 }
