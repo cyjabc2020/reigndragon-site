@@ -207,21 +207,53 @@ export default async function FindingPage({
               </span>
             </div>
           )}
-          {[
-            { label: "Read the paper" },
-            { label: "Benchmark & code" },
-          ].map((r) => (
+          {finding.paperUrl ? (
+            <a
+              href={finding.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-lg border border-accent/30 bg-accent/[0.04] hover:bg-accent/[0.08] hover:border-accent/50 transition-all px-4 py-3 flex items-center justify-between text-sm"
+            >
+              <span className="text-foreground font-medium">
+                Read the paper
+              </span>
+              <span className="inline-flex items-center font-mono text-xs uppercase tracking-[0.15em] text-accent">
+                arXiv
+                <svg
+                  className="ml-2 h-3.5 w-3.5 transform group-hover:translate-x-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </span>
+            </a>
+          ) : (
             <div
-              key={r.label}
               className="rounded-lg border border-border bg-surface/30 px-4 py-3 flex items-center justify-between text-sm"
               aria-disabled
             >
-              <span className="text-text-secondary">{r.label}</span>
+              <span className="text-text-secondary">Read the paper</span>
               <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
                 Coming soon
               </span>
             </div>
-          ))}
+          )}
+          <div
+            className="rounded-lg border border-border bg-surface/30 px-4 py-3 flex items-center justify-between text-sm"
+            aria-disabled
+          >
+            <span className="text-text-secondary">Benchmark &amp; code</span>
+            <span className="font-mono text-xs uppercase tracking-[0.15em] text-text-tertiary">
+              Coming soon
+            </span>
+          </div>
         </div>
       </section>
 
