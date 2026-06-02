@@ -14,6 +14,9 @@ export type Finding = {
   // Slug of the live demo under /demos/<demoSlug>. Optional — only set
   // for findings that have a working interactive prototype.
   demoSlug?: string;
+  // Public URL of the paper (arXiv, preprint server, journal page).
+  // Optional — falls back to a "Coming soon" placeholder when absent.
+  paperUrl?: string;
 };
 
 // All four findings share their slug as the image filename.
@@ -128,6 +131,7 @@ export const findings: Finding[] = [
     whyItMatters:
       "In AI safety, reinforcement learning, economics, and institutional design, we often interpret risk aversion or desperate risk-taking as a property of the agent. This paper shows that irreversible boundaries can create those behaviors structurally.",
     coreInsight: "When failure is irreversible, the world itself becomes loss-sensitive.",
+    paperUrl: "https://arxiv.org/abs/2606.00970",
   },
 ];
 
