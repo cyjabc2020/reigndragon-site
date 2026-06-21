@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "partiful.imgix.net",
       },
+      {
+        // Substack post cover images (used by app/thoughts for synced posts).
+        protocol: "https",
+        hostname: "substackcdn.com",
+      },
     ],
   },
 };
