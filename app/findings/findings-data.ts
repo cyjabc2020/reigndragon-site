@@ -106,6 +106,7 @@ export const findings: Finding[] = [
     whyItMatters:
       "Real AI systems will experience transient failures: bad tool calls, corrupted contexts, unreliable partners, misleading observations. If agents preserve distrust too strongly, a single early error can damage long-term coordination.",
     coreInsight: "Multi-agent systems need trust repair, not just memory.",
+    paperUrl: "https://arxiv.org/abs/2606.14923",
   },
   {
     slug: "loss-aversion",
