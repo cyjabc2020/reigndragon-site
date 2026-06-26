@@ -59,14 +59,23 @@ export default function Home() {
             </h1>
 
             <p className="max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-tight text-foreground mb-6">
-              We design policies and mechanisms to prevent intelligent agents
-              from failing together.
+              Governance always arrives late.
+              <br />
+              <span className="gradient-text">We are arriving on time.</span>
             </p>
-            <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-10">
-              As AI becomes agentic, the central safety question is no longer
-              whether one model is capable, truthful, or aligned. It is whether
-              many intelligent agents can cooperate, recover from failure, and
-              make decisions under irreversible consequences.
+            <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-4">
+              Every prior labor transformation &mdash; industrial, financial,
+              digital &mdash; built its institutions decades after the damage
+              was done.
+            </p>
+            <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground/90 mb-4">
+              The AI workforce is starting to be deployed at enterprise scale
+              right now. The governance science needed to make it cooperative,
+              accountable, and welfare-preserving does not yet exist as a field.
+            </p>
+            <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-foreground font-medium mb-10">
+              ReignDragon is building it, before the defaults harden into
+              infrastructure.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -87,6 +96,32 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="glow-line mx-6" />
+
+      {/* What we do */}
+      <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-accent/40" />
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-tertiary">
+            What we do
+          </span>
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 leading-tight">
+          We design policies and mechanisms to prevent intelligent agents from{" "}
+          <span className="gradient-text">failing together.</span>
+        </h2>
+
+        <div className="space-y-6 text-text-secondary leading-relaxed">
+          <p>
+            As AI becomes agentic, the central safety question is no longer
+            whether one model is capable, truthful, or aligned. It is whether
+            many intelligent agents can cooperate, recover from failure, and
+            make decisions under irreversible consequences.
+          </p>
         </div>
       </section>
 
