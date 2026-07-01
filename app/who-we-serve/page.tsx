@@ -10,30 +10,36 @@ export const metadata: Metadata = {
 const audiences = [
   {
     number: "01",
+    title: "The Public",
+    headline: "Anyone living and working alongside the AI workforce.",
+    body: "AI is quietly becoming part of the workforce that shapes your job, your money, your healthcare, and the services you rely on — and the decisions about how it is governed are being made right now, often without you. As a non-profit, our work belongs in the public conversation, not behind a paywall. We publish our findings, demos, and writing openly so anyone who is curious or concerned can understand what an AI workforce does, where it fails, and what good governance looks like.",
+  },
+  {
+    number: "02",
     title: "AI Labs",
     headline: "Population-level safety evaluations.",
     body: "Single-agent benchmarks miss the failures that matter when models are deployed as a workforce. We provide controlled multi-agent environments that reveal how frontier models behave under risk, across time, and against each other — surfacing welfare collapse, persistent distrust, and exploitative equilibria before they reach users.",
   },
   {
-    number: "02",
+    number: "03",
     title: "Enterprises",
     headline: "Design rules for deploying AI workers across workflows.",
     body: "Enterprises are adopting agentic systems at scale, but the failures that matter for an AI workforce don’t look like the failures that matter for a single agent. We share design rules for deploying AI workers across roles, handoffs, and review windows without creating hidden collective failures — so the workforce serves not only the organization but the people it acts on behalf of. Our findings are published openly, not sold as a service.",
   },
   {
-    number: "03",
+    number: "04",
     title: "Platforms",
     headline: "Governance levers for agent-mediated systems.",
     body: "When a system routes work between agents, settles trades, allocates budgets, or moderates a marketplace, the structural choices around the workers matter more than the workers themselves. We study the levers — visibility, accountability horizon, consequence regime, memory — that reduce collective-action failure, and make what we learn available to the platforms building these systems in the public interest.",
   },
   {
-    number: "04",
+    number: "05",
     title: "Policymakers",
     headline: "Evidence-based frameworks for accountability and oversight.",
     body: "AI governance often arrives years after the technology. We translate experimental findings into deployment-readiness benchmarks and design rules — accountability, oversight, and stakeholder protection in AI labor systems — giving regulators and standard-setters a vocabulary grounded in what AI workforces actually do.",
   },
   {
-    number: "05",
+    number: "06",
     title: "Researchers",
     headline: "Open benchmarks, simulators, and formal models.",
     body: "AI workforce behavior is a young science. We publish the environments, the data, and the formal structure behind our results so the field can replicate, extend, and disagree. Reach out if you want to collaborate on a benchmark, a paper, or a shared simulator.",
