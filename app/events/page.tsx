@@ -5,7 +5,7 @@ import { partitionEvents, type Event } from "./events-data";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Roundtables, talks, and workshops from ReignDragon Lab on governing the AI workforce.",
+    "Roundtables, talks, and workshops from ReignDragon Institute on governing the AI workforce.",
 };
 
 // Re-render on each request so upcoming/past partition stays current.

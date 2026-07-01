@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ReignDragon Lab",
-    template: "%s | ReignDragon Lab",
+    default: "ReignDragon Institute",
+    template: "%s | ReignDragon Institute",
   },
   description:
-    "ReignDragon Lab designs policies and mechanisms to prevent intelligent agents from failing together. We build the science, benchmarks, and governance levers for AI workforces operating inside companies, markets, governments, and platforms.",
+    "ReignDragon Institute designs policies and mechanisms to prevent intelligent agents from failing together. We build the science, benchmarks, and governance levers for AI workforces operating inside companies, markets, governments, and platforms.",
 };
 
 export default function RootLayout({

@@ -11,10 +11,10 @@ export default function Footer() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent/10">
                 <span className="font-mono text-xs font-bold text-accent">RD</span>
               </div>
-              <span className="font-semibold text-foreground text-sm">ReignDragon Lab</span>
+              <span className="font-semibold text-foreground text-sm">ReignDragon Institute</span>
             </div>
             <p className="text-text-tertiary text-sm leading-relaxed">
-              We design policies and mechanisms to prevent intelligent agents from failing together.
+              A non-profit research institute designing policies and mechanisms to prevent intelligent agents from failing together.
             </p>
           </div>
 

@@ -6,7 +6,7 @@ import { findings, findingPortrait } from "./findings-data";
 export const metadata: Metadata = {
   title: "Findings",
   description:
-    "Empirical results from ReignDragon Lab — collective harm from sensible agents, trust scarring, prospect-theory behavior from environment structure, and the absence of a safe default for AI workforce governance.",
+    "Empirical results from ReignDragon Institute — collective harm from sensible agents, trust scarring, prospect-theory behavior from environment structure, and the absence of a safe default for AI workforce governance.",
 };
 
 export default function FindingsPage() {
@@ -27,7 +27,7 @@ export default function FindingsPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            Four results from the lab so far. Each one points to a structural
+            Four results from the institute so far. Each one points to a structural
             lever that decides whether AI workforces serve people or quietly
             harm them.
           </p>

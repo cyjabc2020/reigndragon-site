@@ -83,7 +83,7 @@ export default function NoSafeDefaultDemoPage() {
           </p>
           <p className="text-sm text-text-tertiary max-w-xl mx-auto mb-6">
             Multi-agent AI safety cannot be solved through agent alignment
-            alone. ReignDragon Lab stress-tests consequence regimes and
+            alone. ReignDragon Institute stress-tests consequence regimes and
             designs the accountability rules that turn safe behaviour into
             the equilibrium.
           </p>

@@ -55,7 +55,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl w-full px-6 py-24 sm:py-32">
           <div className="max-w-3xl">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.03em] text-foreground mb-6">
-              <span className="gradient-text">ReignDragon Lab</span>
+              <span className="gradient-text">ReignDragon Institute</span>
             </h1>
 
             <p className="max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-tight text-foreground mb-6">
@@ -92,7 +92,7 @@ export default function Home() {
                 href="/who-we-serve"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors backdrop-blur-sm"
               >
-                Brief the Lab
+                Brief the Institute
               </Link>
             </div>
           </div>
@@ -366,7 +366,7 @@ export default function Home() {
         </div>
 
         <p className="max-w-2xl text-text-secondary leading-relaxed mb-10">
-          Four results from the lab so far. Each one points to a structural
+          Four results from the institute so far. Each one points to a structural
           lever that decides whether AI workforces serve people or quietly
           harm them.
         </p>
@@ -624,7 +624,7 @@ export default function Home() {
               href="/who-we-serve"
               className="inline-flex h-11 items-center justify-center rounded-lg border border-border bg-background/30 px-6 text-sm font-medium text-text-secondary hover:text-foreground hover:border-text-tertiary transition-colors"
             >
-              Brief the Lab
+              Brief the Institute
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # Image prompts
 
-Reference prompts for generating illustrations across the ReignDragon Lab site.
+Reference prompts for generating illustrations across the ReignDragon Institute site.
 
 All site illustrations follow a single visual system:
 **watercolor + dragon + cream-paper background**, with the same mascot

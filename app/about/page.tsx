@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About ReignDragon Lab — we design policies and mechanisms to prevent intelligent agents from failing together. We study how AI workers behave inside companies, markets, and institutions, and turn that evidence into governance that works.",
+    "About ReignDragon Institute — we design policies and mechanisms to prevent intelligent agents from failing together. We study how AI workers behave inside companies, markets, and institutions, and turn that evidence into governance that works.",
 };
 
 export default function AboutPage() {
@@ -23,11 +23,11 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p>
-            ReignDragon Lab designs policies and mechanisms to prevent
-            intelligent agents from failing together. We run controlled
-            multi-agent experiments and formal models inside companies,
-            markets, governments, and platforms &mdash; and translate that
-            evidence into governance that works.
+            ReignDragon Institute is a non-profit research institute that
+            designs policies and mechanisms to prevent intelligent agents from
+            failing together. We run controlled multi-agent experiments and
+            formal models inside companies, markets, governments, and platforms
+            &mdash; and translate that evidence into governance that works.
           </p>
           <p>
             We were founded on a conviction: AI is becoming labor, and the
@@ -36,7 +36,7 @@ export default function AboutPage() {
             answer alone.
           </p>
           <p>
-            So we built a lab that doesn&apos;t pretend otherwise. We design
+            So we built an institute that doesn&apos;t pretend otherwise. We design
             controlled multi-agent experiments, derive the formal structure
             behind what we observe, account for who benefits and who bears
             risk, and turn the findings into design rules people can actually
@@ -45,8 +45,9 @@ export default function AboutPage() {
             policy &mdash; not as parallel tracks, but as one effort.
           </p>
           <p>
-            We publish openly because governance must be a conversation, not a
-            decree.
+            As a non-profit, we answer to the public interest rather than to
+            shareholders or a product roadmap. We publish openly because
+            governance must be a conversation, not a decree.
           </p>
         </div>
       </section>

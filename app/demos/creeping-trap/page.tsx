@@ -88,7 +88,7 @@ export default function CreepingTrapDemoPage() {
             deployment?
           </p>
           <p className="text-sm text-text-tertiary max-w-xl mx-auto mb-6">
-            ReignDragon Lab designs scoped simulations and governance pilots
+            ReignDragon Institute designs scoped simulations and governance pilots
             for AI labs, enterprises, platforms, and funders.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

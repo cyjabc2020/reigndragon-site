@@ -285,7 +285,7 @@ export default function ResearchPage() {
             Publications
           </p>
           <p className="text-text-secondary leading-relaxed">
-            New work from the lab is in preparation. Papers and preprints will
+            New work from the institute is in preparation. Papers and preprints will
             be listed here as they are released.
           </p>
         </div>

@@ -61,7 +61,7 @@ export default function DemosPage() {
 
         <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
           <p className="text-foreground font-medium">
-            Interactive prototypes from ReignDragon Lab showing how AI
+            Interactive prototypes from ReignDragon Institute showing how AI
             workforces fail through institutional structure: accumulating
             risk, invisible stakeholders, and consequence-regime design.
           </p>
@@ -174,7 +174,7 @@ export default function DemosPage() {
           </p>
           <p className="text-lg text-text-secondary max-w-lg mx-auto mb-6">
             Want to test AI workforce failure modes in your own deployment
-            setting? ReignDragon Lab designs scoped simulations and governance
+            setting? ReignDragon Institute designs scoped simulations and governance
             pilots.
           </p>
           <Link
