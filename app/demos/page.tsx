@@ -26,6 +26,15 @@ const demos = [
       "Three agents with unequal wealth must pool resources to avert a crisis. Run the same wealth split and threshold under five consequence regimes — All-or-Nothing, Random, Democratic Vote, Regressive Punishment, Progressive Punishment — and watch fatality rates, fund success, and burden allocation diverge. Every regime has its own death-trap.",
     finding: "no-safe-default",
   },
+  {
+    slug: "thermal-commons",
+    tag: "Thermal Commons",
+    status: "Live",
+    title: "Pool Heat Balance Calculator",
+    description:
+      "Match a data center's waste heat with a swimming pool's heating demand across the year. Choose a climate, data-center size and cooling type, a pool archetype and how many pools; see the month-by-month balance, the share of heat used on each side, and what the pool owner saves against gas or a heat pump. Screening level, from the MIT Thermal Commons project.",
+    finding: "thermal-commons",
+  },
 ];
 
 const upcoming = [
