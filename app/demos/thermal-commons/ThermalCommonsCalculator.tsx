@@ -187,7 +187,7 @@ export default function ThermalCommonsCalculator() {
             ))}
           </div>
           <p className="mt-3 text-xs text-text-tertiary leading-snug">
-            Pool degree days (base 80 °F): {fmt(pdd)} °F·day. Two cities for now; more climates are a data file away.
+            Pool degree days (base 80 °F): {fmt(pdd)} °F·day. Climate from the NCEI Typical Meteorological Year, {city.station}. Two cities for now; more are a data file away.
           </p>
         </Section>
 

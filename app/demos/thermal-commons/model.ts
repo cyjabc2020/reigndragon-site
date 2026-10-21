@@ -13,15 +13,18 @@ export const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const BTU_H_FT2_TO_W_M2 = 3.1546;
 const INHG_TO_PA = 3386.39;
 
-// ─── Climate (approximate NOAA 1991–2020 normals; replace with NCEI station data) ─────
+// ─── Climate: monthly means from the NCEI Typical Meteorological Year (1998–2022,
+// equal weights, nearest GHCNh station), computed from the hourly TMY file.
+// Source: https://www.ncei.noaa.gov/access/typical-meteorological-year/
 export type City = {
   id: string;
   label: string;
+  station: string;
   tempF: number[]; // monthly mean dry-bulb, °F
   rh: number[]; // monthly mean relative humidity, %
-  windMph: number; // annual mean wind at 10 m, mph
+  windMph: number[]; // monthly mean wind at 10 m, mph
   ghi: number[]; // global horizontal irradiance, kWh/m²/day
-  hdd65: number;
+  hdd65: number; // NOAA normals (base 65 °F)
   cdd65: number;
   zone: string; // ASHRAE / IECC climate zone
 };
@@ -30,22 +33,24 @@ export const CITIES: City[] = [
   {
     id: "boston",
     label: "Boston, MA",
+    station: "USW00014739 Boston Logan (TMY 1998–2022)",
     zone: "5A (cold, humid)",
-    tempF: [31.6, 33.4, 40.1, 49.9, 59.9, 69.3, 75.4, 74.3, 67.2, 56.0, 46.1, 37.1],
-    rh: [62, 62, 63, 64, 67, 69, 69, 71, 72, 69, 67, 65],
-    windMph: 12.5,
-    ghi: [1.9, 2.8, 3.8, 4.7, 5.5, 5.9, 5.9, 5.3, 4.3, 3.0, 1.9, 1.6],
+    tempF: [32.2, 33.3, 38.8, 47.9, 58.3, 66.7, 73.6, 73.5, 67.8, 55.2, 46.2, 36.3],
+    rh: [59, 65, 58, 60, 71, 70, 69, 67, 72, 75, 65, 69],
+    windMph: [12.3, 11.6, 12.2, 11.9, 10.7, 9.8, 10.3, 9.6, 10.4, 10.8, 11.1, 11.9],
+    ghi: [1.97, 2.65, 3.73, 4.98, 5.38, 5.97, 6.25, 5.32, 4.52, 3.1, 2.04, 1.4],
     hdd65: 5630,
     cdd65: 777,
   },
   {
     id: "phoenix",
     label: "Phoenix, AZ",
+    station: "USW00023183 Phoenix Sky Harbor (TMY 1998–2022)",
     zone: "2B (hot, dry)",
-    tempF: [56.5, 59.4, 65.7, 72.4, 81.4, 90.5, 94.8, 93.5, 88.0, 76.5, 64.5, 56.0],
-    rh: [46, 41, 36, 27, 22, 19, 30, 35, 34, 34, 40, 48],
-    windMph: 6.2,
-    ghi: [3.3, 4.3, 5.5, 6.9, 7.6, 7.8, 7.0, 6.6, 5.9, 4.7, 3.6, 3.0],
+    tempF: [56.1, 59.5, 69.3, 74.0, 82.3, 93.8, 95.9, 94.1, 90.0, 78.0, 66.6, 56.3],
+    rh: [48, 41, 28, 25, 19, 15, 31, 34, 27, 33, 34, 45],
+    windMph: [4.4, 5.9, 6.6, 7.4, 7.9, 7.1, 7.9, 6.9, 6.6, 6.3, 4.6, 4.8],
+    ghi: [3.41, 4.35, 5.87, 7.16, 8.2, 8.59, 7.39, 6.9, 6.19, 4.89, 3.86, 3.09],
     hdd65: 1040,
     cdd65: 4556,
   },
@@ -143,8 +148,8 @@ export type MonthDemand = { month: string; mwh: number; wm2: number };
 // pool gains more than it loses).
 export function monthlyDemand(city: City, pool: Pool, o: DemandOptions): MonthDemand[] {
   const tAnnC = ((city.tempF.reduce((s, t) => s + t, 0) / 12 - 32) * 5) / 9;
-  const v = city.windMph * 0.35; // sheltered pool surface
   return MONTHS.map((month, m) => {
+    const v = city.windMph[m] * 0.35; // sheltered pool surface
     const taC = ((city.tempF[m] - 32) * 5) / 9;
     const ta = o.indoor ? 27 : taC;
     const rh = o.indoor ? 55 : city.rh[m];

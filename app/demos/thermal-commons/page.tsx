@@ -99,14 +99,17 @@ export default function ThermalCommonsDemoPage() {
             Savings count only the heat actually delivered, priced against a
             gas heater and against an air-source heat pump at the prices in
             the assumptions panel. Connection costs (heat exchanger, piping,
-            pumps) are not yet included. Climate inputs are approximate
-            NOAA 1991 to 2020 normals and will be replaced with station data.
+            pumps) are not yet included. Climate inputs are monthly means
+            from the NCEI Typical Meteorological Year (1998 to 2022) for the
+            nearest first-order station; the monthly model was checked against
+            an hourly run of the same TMY with day-level storage in the pool and
+            agrees within 2 %.
           </p>
           <p className="text-text-tertiary">
             Sources: DOE Energy Saver pool-heater pages; ENERGY STAR Swimming
             Pool Technical Reference (2023); ASHRAE HVAC Applications ch. 5;
             Alfa Laval and ICEF 2025 on heat-reuse temperatures by cooling
-            type; EPA emission factors.
+            type; NCEI Typical Meteorological Year; EPA emission factors.
           </p>
         </div>
       </section>
