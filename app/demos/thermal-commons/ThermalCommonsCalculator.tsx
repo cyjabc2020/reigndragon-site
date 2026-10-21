@@ -9,7 +9,6 @@ import {
   POOLS,
   balance,
   economics,
-  poolDegreeDays,
   type Balance,
 } from "./model";
 
@@ -174,7 +173,6 @@ export default function ThermalCommonsCalculator() {
   const econ = economics(b.usedMwh, prices);
   const poolTempC = ((tempF - 32) * 5) / 9;
   const directUse = cooling.supplyC[0] >= poolTempC + 3;
-  const pdd = poolDegreeDays(city);
 
   return (
     <div className="mx-auto max-w-5xl px-6 pb-16 space-y-6">
@@ -186,9 +184,6 @@ export default function ThermalCommonsCalculator() {
               <Choice key={c.id} active={c.id === cityId} onClick={() => setCityId(c.id)} title={c.label} sub={`Zone ${c.zone} · HDD65 ${fmt(c.hdd65)}`} />
             ))}
           </div>
-          <p className="mt-3 text-xs text-text-tertiary leading-snug">
-            Pool degree days (base 80 °F): {fmt(pdd)} °F·day. Climate from the NCEI Typical Meteorological Year, {city.station}. Two cities for now; more are a data file away.
-          </p>
         </Section>
 
         <Section label="2 · Data center" right={<span className="font-mono text-xs text-accent">{fmtMw(dcMw)} IT load</span>}>
@@ -198,7 +193,6 @@ export default function ThermalCommonsCalculator() {
             ))}
           </div>
           <input type="range" min={0} max={100} step={0.5} value={mwToSlider(dcMw)} onChange={(e) => setDcMw(Number(sliderToMw(Number(e.target.value)).toPrecision(2)))} className="w-full accent-accent" />
-          <p className="mt-1 text-xs text-text-tertiary leading-snug">IT load, 0.1 to 200 MW (log scale). Every MW rejects about 8,760 MWh of heat a year, flat across the seasons.</p>
         </Section>
 
         <Section label="3 · Cooling type">
@@ -235,7 +229,7 @@ export default function ThermalCommonsCalculator() {
         <Section
           label="5 · Number of pools"
           right={
-            <button onClick={() => setNPools(Math.max(1, Math.min(500, b.poolsAtPeak === Infinity ? 1 : b.poolsAtPeak)))} className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent hover:text-accent/80 transition-colors">
+            <button onClick={() => setNPools(Math.max(1, Math.min(100, b.poolsAtPeak === Infinity ? 1 : b.poolsAtPeak)))} className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent hover:text-accent/80 transition-colors">
               Fill the data center →
             </button>
           }
@@ -246,8 +240,7 @@ export default function ThermalCommonsCalculator() {
               {b.poolsAtPeak === Infinity ? "no winter load here" : `this data center carries ${fmt(b.poolsAtPeak)} in January`}
             </span>
           </div>
-          <input type="range" min={1} max={500} step={1} value={nPools} onChange={(e) => setNPools(Number(e.target.value))} className="w-full accent-accent" />
-          <p className="mt-1 text-xs text-text-tertiary leading-snug">The chart shows the total for all pools as bars and a single pool as the thin line on the right axis.</p>
+          <input type="range" min={1} max={100} step={1} value={nPools} onChange={(e) => setNPools(Number(e.target.value))} className="w-full accent-accent" />
         </Section>
 
         <Section label="Assumptions">
@@ -288,14 +281,11 @@ export default function ThermalCommonsCalculator() {
           </div>
         </div>
         <BalanceChart b={b} nPools={nPools} />
-        <p className="mt-2 text-xs text-text-tertiary leading-snug">
-          {nPools} × {pool.label.toLowerCase()} pool{nPools > 1 ? "s" : ""} at {tempF} °F, {indoor ? "indoor" : cover ? "outdoor, covered when idle" : "outdoor, never covered"}, open all year. Months with no bar need no heat: the pool gains more from sun and air than it loses.
-        </p>
       </div>
 
       {/* KPIs */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <Kpi label="Pool heat demand" value={`${fmt(b.annualDemandMwh)} MWh/yr`} sub={nPools > 1 ? `${fmt(b.annualUnitMwh)} MWh per pool · ${fmt((b.annualUnitMwh * 1000) / pool.areaM2)} kWh/m²` : `${fmt((b.annualUnitMwh * 1000) / pool.areaM2)} kWh per m² of surface`} />
+        <Kpi label="Pool heat demand" value={`${fmt(b.annualDemandMwh)} MWh/yr`} sub={indoor ? `${fmt(b.annualUnitWaterMwh)} MWh water + ${fmt(b.annualUnitHallMwh)} MWh hall air per pool` : nPools > 1 ? `${fmt(b.annualUnitMwh)} MWh per pool · ${fmt((b.annualUnitMwh * 1000) / pool.areaM2)} kWh/m²` : `${fmt((b.annualUnitMwh * 1000) / pool.areaM2)} kWh per m² of surface`} />
         <Kpi label="Demand met by DC heat" value={`${fmt(b.demandMet * 100)} %`} sub={b.demandMet < 1 ? `${fmt(b.annualDemandMwh - b.usedMwh)} MWh/yr still needs a backup heater` : "Covered in every month"} accent />
         <Kpi label="Share of DC heat absorbed" value={`${fmt(b.dcShareUsed * 100, b.dcShareUsed < 0.1 ? 1 : 0)} %`} sub={`of ${fmt(b.annualSupplyMwh)} MWh/yr recoverable`} />
         <Kpi label="Peak load, one pool" value={`${fmt(b.peakUnitKw)} kW`} sub="January monthly average; sizes the heat exchanger" />
@@ -320,7 +310,6 @@ export default function ThermalCommonsCalculator() {
               <span className="text-[rgba(255,140,90,0.95)]">Supply is too close to pool temperature for a plain heat exchanger; a small heat pump or a warmer loop would be needed.</span>
             )}
           </p>
-          <p className="mt-2 text-xs text-text-tertiary leading-snug">{cooling.blurb}</p>
         </Section>
       </div>
     </div>
