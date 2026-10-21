@@ -142,23 +142,67 @@ export type DemandOptions = {
   idleAF: number; // 0.5 = ASHRAE unoccupied convention; 1.0 reproduces DOE cost tables
 };
 
-export type MonthDemand = { month: string; mwh: number; wm2: number };
+export type MonthDemand = {
+  month: string;
+  mwh: number; // total heating demand, MWh thermal
+  wm2: number; // net surface load, W per m² of pool
+  waterMwh: number; // pool water: surface losses + make-up water
+  hallMwh: number; // indoor only: pool-hall ventilation air + envelope
+};
 
-// Monthly heating demand for ONE pool, MWh thermal (clamped at zero when the
-// pool gains more than it loses).
+// Indoor pool hall assumptions (screening level).
+const HALL_AIR_C = 28; // natatorium air set point, 1 K above a 27 °C pool
+const HALL_RH = 55;
+const VENT_LPS_PER_M2 = 2.4; // ASHRAE 62.1 outdoor air for pool and deck, 0.48 cfm/ft²
+const DECK_RATIO = 1.0; // deck area as a multiple of pool area
+const HEAT_RECOVERY = 0.5; // sensible heat recovery on exhaust air
+const ENVELOPE_RATIO = 3.0; // hall envelope area (roof + walls) per m² of pool
+const ENVELOPE_U = 0.5; // W/m²K, insulated hall
+const MAKEUP_FRACTION_PER_DAY = 0.005; // backwash and bather carry-out, share of volume per day
+const LATENT_KJ_PER_KG = 2450;
+
+// Mains (source) water temperature: follows air temperature with damping and a one-month lag.
+export function mainsTempC(city: City, m: number) {
+  const tAnn = ((city.tempF.reduce((s, t) => s + t, 0) / 12 - 32) * 5) / 9;
+  const prev = ((city.tempF[(m + 11) % 12] - 32) * 5) / 9;
+  return tAnn + 0.5 * (prev - tAnn);
+}
+
+// Monthly heating demand for ONE pool, MWh thermal (surface terms clamped at
+// zero when the pool gains more than it loses; make-up and hall terms added).
 export function monthlyDemand(city: City, pool: Pool, o: DemandOptions): MonthDemand[] {
   const tAnnC = ((city.tempF.reduce((s, t) => s + t, 0) / 12 - 32) * 5) / 9;
   return MONTHS.map((month, m) => {
     const v = city.windMph[m] * 0.35; // sheltered pool surface
     const taC = ((city.tempF[m] - 32) * 5) / 9;
-    const ta = o.indoor ? 27 : taC;
-    const rh = o.indoor ? 55 : city.rh[m];
+    const ta = o.indoor ? HALL_AIR_C : taC;
+    const rh = o.indoor ? HALL_RH : city.rh[m];
     const ghi = o.indoor ? 0 : city.ghi[m];
     const use = poolLossWm2(o.poolTempC, ta, rh, v, pool.af, ghi, tAnnC, false, o.indoor);
     const idle = poolLossWm2(o.poolTempC, ta, rh, v, o.idleAF, ghi, tAnnC, o.coverIdle, o.indoor);
     const wm2 = (use.net * pool.useHours + idle.net * (24 - pool.useHours)) / 24;
-    const mwh = (Math.max(wm2, 0) * pool.areaM2 * 24 * DAYS[m]) / 1e6;
-    return { month, mwh, wm2 };
+    const hours = 24 * DAYS[m];
+    const surfaceMwh = (Math.max(wm2, 0) * pool.areaM2 * hours) / 1e6;
+
+    // Make-up water: evaporated mass plus backwash, heated from mains to pool temperature.
+    const evapWm2 = (use.evap * pool.useHours + idle.evap * (24 - pool.useHours)) / 24;
+    const evapKgPerDay = (evapWm2 * pool.areaM2 * 86.4) / LATENT_KJ_PER_KG; // W → kJ/day ÷ latent
+    const makeupKgPerDay = evapKgPerDay + MAKEUP_FRACTION_PER_DAY * pool.areaM2 * pool.depthM * 1000;
+    const dT = Math.max(o.poolTempC - mainsTempC(city, m), 0);
+    const makeupMwh = (makeupKgPerDay * 4.186 * dT * DAYS[m]) / 3.6e6;
+
+    // Indoor pool hall: outdoor-air ventilation heated to the hall set point (with heat
+    // recovery) plus conduction through the hall envelope. Heating only; summer cooling
+    // of the hall is a separate load the data center cannot serve.
+    let hallMwh = 0;
+    if (o.indoor) {
+      const ventKgPerS = VENT_LPS_PER_M2 * pool.areaM2 * (1 + DECK_RATIO) * 0.0012; // 1.2 kg/m³
+      const ventW = Math.max(HALL_AIR_C - taC, 0) * ventKgPerS * 1006 * (1 - HEAT_RECOVERY);
+      const envW = Math.max(HALL_AIR_C - taC, 0) * ENVELOPE_RATIO * pool.areaM2 * ENVELOPE_U;
+      hallMwh = ((ventW + envW) * hours) / 1e6;
+    }
+    const waterMwh = surfaceMwh + makeupMwh;
+    return { month, mwh: waterMwh + hallMwh, wm2, waterMwh, hallMwh };
   });
 }
 
@@ -179,6 +223,8 @@ export type BalanceRow = {
 export type Balance = {
   rows: BalanceRow[];
   annualUnitMwh: number;
+  annualUnitWaterMwh: number;
+  annualUnitHallMwh: number;
   annualDemandMwh: number;
   annualSupplyMwh: number;
   usedMwh: number;
@@ -197,6 +243,8 @@ export function balance(city: City, pool: Pool, nPools: number, dcMw: number, co
     return { month: u.month, unitMwh: u.mwh, demandMwh: demand, supplyMwh: supply, usedMwh: used, unmetMwh: demand - used };
   });
   const annualUnit = unit.reduce((s, u) => s + u.mwh, 0);
+  const annualUnitWater = unit.reduce((s, u) => s + u.waterMwh, 0);
+  const annualUnitHall = unit.reduce((s, u) => s + u.hallMwh, 0);
   const annualDemand = rows.reduce((s, r) => s + r.demandMwh, 0);
   const annualSupply = rows.reduce((s, r) => s + r.supplyMwh, 0);
   const used = rows.reduce((s, r) => s + r.usedMwh, 0);
@@ -204,6 +252,8 @@ export function balance(city: City, pool: Pool, nPools: number, dcMw: number, co
   return {
     rows,
     annualUnitMwh: annualUnit,
+    annualUnitWaterMwh: annualUnitWater,
+    annualUnitHallMwh: annualUnitHall,
     annualDemandMwh: annualDemand,
     annualSupplyMwh: annualSupply,
     usedMwh: used,
